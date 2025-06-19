@@ -22,7 +22,7 @@ jobs:
             git pull origin
             echo "Installing dependencies..."
             pnpm install
-            docker compose build payload_main
+            docker compose build gscengland
             docker compose up -d
             docker builder prune -f
           EOF
