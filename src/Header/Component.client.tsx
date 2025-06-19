@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState, useRef } from 'react'
 import { Menu, X, SearchIcon } from 'lucide-react'
-import { ThemeSelector } from '@/providers/Theme/ThemeSelector'
+// import { ThemeSelector } from '@/providers/Theme/ThemeSelector'
 import type { Header } from '@/payload-types'
 
 import { Logo } from '@/components/Logo/'
@@ -221,10 +221,10 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
                   <span>Search</span>
                 </Link>
 
-                <div className="flex gap-1 items-center mt-16 dark:text-white">
+                {/* <div className="flex gap-1 items-center mt-16 dark:text-white">
                   <span className="font-semibold">Theme</span>
                   <ThemeSelector />
-                </div>
+                </div> */}
               </nav>
             </div>
           </div>
