@@ -13,7 +13,7 @@ export const post1: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
   author,
 }) => {
   return {
-    slug: 'digital-horizons',
+    slug: 'our-mission-and-vision',
     _status: 'published',
     authors: [author],
     content: {
@@ -29,7 +29,7 @@ export const post1: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: 'Dive into the marvels of modern innovation, where the only constant is change. A journey where pixels and data converge to craft the future.',
+                text: 'At Gateway Salvation Church, we have a mandate from God to evangelize, bring men, and equip them with word of God, by the power of the Holy Spirit.',
                 version: 1,
               },
             ],
@@ -66,7 +66,7 @@ export const post1: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                           format: 0,
                           mode: 'normal',
                           style: '',
-                          text: ' This content is fabricated and for demonstration purposes only. To edit this post, ',
+                          text: ' This content represents our church mission and vision. To edit this post, ',
                           version: 1,
                         },
                         {
@@ -129,7 +129,7 @@ export const post1: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: 'The Rise of AI and Machine Learning',
+                text: 'Our Vision and Calling',
                 version: 1,
               },
             ],
@@ -148,7 +148,7 @@ export const post1: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: 'We find ourselves in a transformative era where artificial intelligence (AI) stands at the forefront of technological evolution. The ripple effects of its advancements are reshaping industries at an unprecedented pace. No longer are businesses bound by the limitations of tedious, manual processes. Instead, sophisticated machines, fueled by vast amounts of historical data, are now capable of making decisions previously left to human intuition. These intelligent systems are not only optimizing operations but also pioneering innovative approaches, heralding a new age of business transformation worldwide. ',
+                text: "We are committed to reach out to souls, develop and disciple them for the coming King. We are persuaded that practicing and living a holy life is the only way for a disciple to see the face of God. Hence we evangelize and engage in discipleship. Our aspiration is for Gateway Salvation Church to serve as a secure and inviting space where you can freely pose difficult inquiries and discover a community that stands by you through life's most testing periods.",
                 version: 1,
               },
             ],
@@ -167,7 +167,7 @@ export const post1: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: 'To demonstrate basic AI functionality, here is a javascript snippet that makes a POST request to a generic AI API in order to generate text based on a prompt. ',
+                text: 'Our Service Times and Location Information',
                 version: 1,
               },
             ],
@@ -182,7 +182,7 @@ export const post1: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
             fields: {
               blockName: 'Generate Text',
               blockType: 'code',
-              code: "async function generateText(prompt) {\n    const apiKey = 'your-api-key';\n    const apiUrl = 'https://api.example.com/generate-text';\n\n    const response = await fetch(apiUrl, {\n        method: 'POST',\n        headers: {\n            'Content-Type': 'application/json',\n            'Authorization': `Bearer ${apiKey}`\n        },\n        body: JSON.stringify({\n            model: 'text-generation-model',\n            prompt: prompt,\n            max_tokens: 50\n        })\n    });\n\n    const data = await response.json();\n    console.log(data.choices[0].text.trim());\n}\n\n// Example usage\ngenerateText(\"Once upon a time in a faraway land,\");\n",
+              code: "// Gateway Salvation Church Service Information\n\nconst serviceInfo = {\n    address: {\n        street: '16, The Grove',\n        location: 'Swanscombe Council Hall',\n        postcode: 'DA10 0AD'\n    },\n    serviceTimes: {\n        sunday: '10:30 am - 12:30 pm',\n        thursday: '7 pm, via Zoom'\n    },\n    contact: {\n        phone: '+44 (0) 1322632375',\n        email: 'admin@gscengland.org'\n    }\n};\n\n// Display service information\nconsole.log('Join us for worship at:', serviceInfo.address);\nconsole.log('Service times:', serviceInfo.serviceTimes);\n",
               language: 'javascript',
             },
             format: '',
@@ -197,7 +197,7 @@ export const post1: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: 'IoT: Connecting the World Around Us',
+                text: 'Community and Fellowship',
                 version: 1,
               },
             ],
@@ -216,7 +216,7 @@ export const post1: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: "In today's rapidly evolving technological landscape, the Internet of Things (IoT) stands out as a revolutionary force. From transforming our residences with smart home systems to redefining transportation through connected cars, IoT's influence is palpable in nearly every facet of our daily lives.",
+                text: "You May Come In As A Stranger But You'll Leave As Family. We are glad you are here. We pray that your visit to our church will be a meaningful one, and that you will experience the love and fellowship of our community. We hope you will enjoy our worship services, where we encounter God through His Word, praise, and prayer.",
                 version: 1,
               },
             ],
@@ -235,7 +235,7 @@ export const post1: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: "This technology hinges on the seamless integration of devices and systems, allowing them to communicate and collaborate effortlessly. With each connected device, we move a step closer to a world where convenience and efficiency are embedded in the very fabric of our existence. As a result, we're transitioning into an era where our surroundings intuitively respond to our needs, heralding a smarter and more interconnected global community.",
+                text: 'We would love to get to know you better. Please feel free to introduce yourself to one of our ushers or pastors. We would also be happy to answer any questions you have about our church or our faith. We hope to see you again soon!',
                 version: 1,
               },
             ],
@@ -305,11 +305,11 @@ export const post1: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
     heroImage: heroImage.id,
     meta: {
       description:
-        'Dive into the marvels of modern innovation, where the only constant is change. A journey where pixels and data converge to craft the future.',
+        'At Gateway Salvation Church, we have a mandate from God to evangelize, bring men, and equip them with word of God, by the power of the Holy Spirit.',
       image: heroImage.id,
-      title: 'Digital Horizons: A Glimpse into Tomorrow',
+      title: 'Our Mission and Vision',
     },
     relatedPosts: [], // this is populated by the seed script
-    title: 'Digital Horizons: A Glimpse into Tomorrow',
+    title: 'Our Mission and Vision',
   }
 }

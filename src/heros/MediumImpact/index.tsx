@@ -1,12 +1,22 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 
 import type { Page } from '@/payload-types'
 
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
+import { useTheme } from '@/providers/Theme'
+import { useHeaderTheme } from '@/providers/HeaderTheme'
 
 export const MediumImpactHero: React.FC<Page['hero']> = ({ links, media, richText }) => {
+  const { theme } = useTheme()
+  const { setHeaderTheme } = useHeaderTheme()
+
+  useEffect(() => {
+    setHeaderTheme(theme === 'dark' ? 'dark' : 'light')
+  }, [setHeaderTheme, theme])
+
   return (
     <div className="">
       <div className="container mb-8">

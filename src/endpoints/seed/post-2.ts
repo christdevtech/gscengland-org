@@ -5,9 +5,8 @@ export const post2: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
   heroImage,
   blockImage,
   author,
-}) => {
-  return {
-    slug: 'global-gaze',
+}) => {  return {
+    slug: 'meet-our-leadership',
     _status: 'published',
     authors: [author],
     content: {
@@ -23,7 +22,7 @@ export const post2: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: 'Explore the untold and overlooked. A magnified view into the corners of the world, where every story deserves its spotlight.',
+                text: 'Meet Pastor Ola & Grace Olaiya and our dedicated leadership team who serve God together with all their hearts.',
                 version: 1,
               },
             ],
@@ -60,7 +59,7 @@ export const post2: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                           format: 0,
                           mode: 'normal',
                           style: '',
-                          text: ' This content is fabricated and for demonstration purposes only. To edit this post, ',
+                          text: ' This content showcases our church leadership and their heart for ministry. To edit this post, ',
                           version: 1,
                         },
                         {
@@ -114,7 +113,7 @@ export const post2: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: 'The Power of Resilience: Stories of Recovery and Hope',
+                text: 'Pastor Ola & Grace Olaiya: Our Pastoral Team',
                 version: 1,
               },
             ],
@@ -133,7 +132,7 @@ export const post2: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: "Throughout history, regions across the globe have faced the devastating impact of natural disasters, the turbulence of political unrest, and the challenging ripples of economic downturns. In these moments of profound crisis, an often-underestimated force emerges: the indomitable resilience of the human spirit. These aren't just tales of mere survival, but stories of communities forging bonds, uniting with a collective purpose, and demonstrating an innate ability to overcome.",
+                text: "Pastor Ola as he is popularly called, grew up in Nigeria and accepted the life of Christ in the year 2000. He has been in the ministry since then by serving in a local church, as an evangelism leader, missions leader, part of the publicity team, preacher, youth Leader and then Senior Pastor. Ola loves to pray and engage in different types of evangelism (House to House, face to face, street evangelism etc). His passion is to see Jesus being preached to every man and for them to get to know Him as their personal Lord. Ola is a trained Architect and UK/EU Customs Compliance Professional.",
                 version: 1,
               },
             ],
@@ -162,7 +161,7 @@ export const post2: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: 'From neighbors forming makeshift rescue teams during floods to entire cities rallying to rebuild after economic collapse, the essence of humanity is most evident in these acts of solidarity. As we delve into these narratives, we witness the transformative power of community spirit, where adversity becomes a catalyst for growth, unity, and a brighter, rebuilt future.',
+                text: 'Grace is Pastor Ola\'s lovely wife and they both serve God together with all their hearts. She grew up in Lagos, Nigeria, after her parents relocated from Cameroon when she was just 3 years of age. Grace loves to study the word of God and enjoys sharing her passion about the bible! She loves praying and listening to spiritual sermons. Grace is a trained Geographer and an Analytics Consultant by profession. They are blessed with a dear son.',
                 version: 1,
               },
             ],
@@ -190,7 +189,7 @@ export const post2: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                           format: 0,
                           mode: 'normal',
                           style: '',
-                          text: "This content above is completely dynamic using custom layout building blocks configured in the CMS. This can be anything you'd like from rich text and images, to highly designed, complex components.",
+                          text: "Working alongside Ola & Grace is a growing core team of volunteers who together carry the weight and practicalities of the Church vision. Our trustees include Grace Olaiya, Dora Affam, and Centina Sylvester.",
                           version: 1,
                         },
                       ],
@@ -222,11 +221,11 @@ export const post2: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
     heroImage: heroImage.id,
     meta: {
       description:
-        'Explore the untold and overlooked. A magnified view into the corners of the world, where every story deserves its spotlight.',
+        'Meet Pastor Ola & Grace Olaiya and our dedicated leadership team who serve God together with all their hearts.',
       image: heroImage.id,
-      title: 'Global Gaze: Beyond the Headlines',
+      title: 'Meet Our Leadership',
     },
     relatedPosts: [], // this is populated by the seed script
-    title: 'Global Gaze: Beyond the Headlines',
+    title: 'Meet Our Leadership',
   }
 }

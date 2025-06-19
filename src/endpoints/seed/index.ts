@@ -45,9 +45,7 @@ export const seed = async ({
     globals.map((global) =>
       payload.updateGlobal({
         slug: global,
-        data: {
-          navItems: [],
-        },
+        data: {},
         depth: 0,
         context: {
           disableRevalidate: true,
@@ -305,34 +303,79 @@ export const seed = async ({
             },
           },
         ],
+        buttons: [
+          {
+            link: {
+              type: 'custom',
+              label: 'Give now',
+              url: '/give',
+              icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift-icon lucide-gift"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>',
+            },
+          },
+        ],
       },
     }),
     payload.updateGlobal({
       slug: 'footer',
       data: {
-        navItems: [
+        footerMotto:
+          'At GSC, we have a mandate from God to evangelize, bring men, and equip them with word of God, by the power of the Holy Spirit.',
+        footerMenus: [
           {
-            link: {
-              type: 'custom',
-              label: 'Admin',
-              url: '/admin',
-            },
+            title: 'Quick Links',
+            items: [
+              {
+                link: {
+                  type: 'custom',
+                  label: 'Website Admin',
+                  url: '/admin',
+                },
+              },
+              {
+                link: {
+                  type: 'custom',
+                  label: 'Donate now',
+                  newTab: true,
+                  url: '/donate',
+                },
+              },
+              {
+                link: {
+                  type: 'custom',
+                  label: 'Events',
+                  newTab: true,
+                  url: '/events',
+                },
+              },
+            ],
           },
           {
-            link: {
-              type: 'custom',
-              label: 'Source Code',
-              newTab: true,
-              url: 'https://github.com/payloadcms/payload/tree/main/templates/website',
-            },
-          },
-          {
-            link: {
-              type: 'custom',
-              label: 'Payload',
-              newTab: true,
-              url: 'https://payloadcms.com/',
-            },
+            title: 'Quick Links',
+            items: [
+              {
+                link: {
+                  type: 'custom',
+                  label: 'Website Admin',
+                  url: '/admin',
+                },
+              },
+              {
+                link: {
+                  type: 'custom',
+                  label: 'Donate now',
+                  newTab: true,
+                  url: '/donate',
+                },
+              },
+              {
+                link: {
+                  type: 'custom',
+                  label: 'Events',
+                  newTab: true,
+                  url: '/events',
+                },
+              },
+            ],
           },
         ],
       },

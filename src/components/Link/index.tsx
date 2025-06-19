@@ -18,6 +18,8 @@ type CMSLinkType = {
   size?: ButtonProps['size'] | null
   type?: 'custom' | 'reference' | null
   url?: string | null
+  icon?: string | null
+  iconPosition?: 'left' | 'right' | null
 }
 
 export const CMSLink: React.FC<CMSLinkType> = (props) => {
@@ -31,6 +33,8 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
     reference,
     size: sizeFromProps,
     url,
+    icon,
+    iconPosition,
   } = props
 
   const href =
@@ -57,9 +61,19 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
 
   return (
     <Button asChild className={className} size={size} variant={appearance}>
-      <Link className={cn(className)} href={href || url || ''} {...newTabProps}>
+      <Link
+        className={cn(className, 'flex justify-center items-center gap-2')}
+        href={href || url || ''}
+        {...newTabProps}
+      >
+        {icon && icon !== 'none' && iconPosition === 'left' && (
+          <span dangerouslySetInnerHTML={{ __html: icon }} />
+        )}
         {label && label}
         {children && children}
+        {icon && icon !== 'none' && iconPosition === 'right' && (
+          <span dangerouslySetInnerHTML={{ __html: icon }} />
+        )}
       </Link>
     </Button>
   )

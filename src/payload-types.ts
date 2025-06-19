@@ -170,6 +170,84 @@ export interface Page {
           link: {
             type?: ('reference' | 'custom') | null;
             newTab?: boolean | null;
+            buttonClasses?:
+              | (
+                  | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium'
+                  | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium rounded-xl'
+                  | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium rounded-full'
+                  | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium'
+                  | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium rounded-xl'
+                  | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium rounded-full'
+                  | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium'
+                  | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium rounded-xl'
+                  | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium rounded-full'
+                  | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium'
+                  | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium rounded-xl'
+                  | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium rounded-full'
+                  | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium'
+                  | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium rounded-xl'
+                  | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium rounded-full'
+                  | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium'
+                  | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium rounded-xl'
+                  | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium rounded-full'
+                  | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium'
+                  | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium rounded-xl'
+                  | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium rounded-full'
+                  | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium'
+                  | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium rounded-xl'
+                  | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium rounded-full'
+                  | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium'
+                  | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium rounded-xl'
+                  | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium rounded-full'
+                  | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium'
+                  | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium rounded-xl'
+                  | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium rounded-full'
+                  | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium'
+                  | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium rounded-xl'
+                  | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium rounded-full'
+                  | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium'
+                  | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium rounded-xl'
+                  | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium rounded-full'
+                  | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium'
+                  | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium rounded-xl'
+                  | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium rounded-full'
+                  | 'text-brand-blue hover:text-brand-blue/80 underline-offset-4 hover:underline transition-colors duration-200 font-medium'
+                  | 'text-primary hover:text-primary/80 underline-offset-4 hover:underline transition-colors duration-200 font-medium'
+                  | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium'
+                  | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium rounded-xl'
+                  | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium rounded-full'
+                  | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium'
+                  | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium rounded-xl'
+                  | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium rounded-full'
+                  | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl'
+                  | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl'
+                  | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-full'
+                  | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl'
+                  | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl'
+                  | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-full'
+                  | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95'
+                  | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95 rounded-xl'
+                  | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95 rounded-full'
+                  | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium'
+                  | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium rounded-xl'
+                  | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium rounded-full'
+                )
+              | null;
+            icon?:
+              | (
+                  | 'none'
+                  | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>'
+                  | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-up-right-icon lucide-move-up-right"><path d="M13 5H19V11"/><path d="M19 5L5 19"/></svg>'
+                  | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg>'
+                  | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw-icon lucide-refresh-cw"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>'
+                  | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key-round-icon lucide-key-round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg>'
+                  | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift-icon lucide-gift"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>'
+                  | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>'
+                  | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-drill-icon lucide-drill"><path d="M10 18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H5a3 3 0 0 1-3-3 1 1 0 0 1 1-1z"/><path d="M13 10H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1l-.81 3.242a1 1 0 0 1-.97.758H8"/><path d="M14 4h3a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-3"/><path d="M18 6h4"/><path d="m5 10-2 8"/><path d="m7 18 2-8"/></svg>'
+                  | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>'
+                )
+              | null;
+            iconPosition?: ('left' | 'right') | null;
             reference?:
               | ({
                   relationTo: 'pages';
@@ -186,6 +264,7 @@ export interface Page {
              */
             appearance?: ('default' | 'outline') | null;
           };
+          size?: ('default' | 'sm' | 'lg') | null;
           id?: string | null;
         }[]
       | null;
@@ -410,6 +489,84 @@ export interface CallToActionBlock {
         link: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
+          buttonClasses?:
+            | (
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium'
+                | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium'
+                | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium'
+                | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium rounded-full'
+                | 'text-brand-blue hover:text-brand-blue/80 underline-offset-4 hover:underline transition-colors duration-200 font-medium'
+                | 'text-primary hover:text-primary/80 underline-offset-4 hover:underline transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-full'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-full'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95 rounded-xl'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95 rounded-full'
+                | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium'
+                | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium rounded-xl'
+                | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium rounded-full'
+              )
+            | null;
+          icon?:
+            | (
+                | 'none'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-up-right-icon lucide-move-up-right"><path d="M13 5H19V11"/><path d="M19 5L5 19"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw-icon lucide-refresh-cw"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key-round-icon lucide-key-round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift-icon lucide-gift"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-drill-icon lucide-drill"><path d="M10 18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H5a3 3 0 0 1-3-3 1 1 0 0 1 1-1z"/><path d="M13 10H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1l-.81 3.242a1 1 0 0 1-.97.758H8"/><path d="M14 4h3a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-3"/><path d="M18 6h4"/><path d="m5 10-2 8"/><path d="m7 18 2-8"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>'
+              )
+            | null;
+          iconPosition?: ('left' | 'right') | null;
           reference?:
             | ({
                 relationTo: 'pages';
@@ -426,6 +583,7 @@ export interface CallToActionBlock {
            */
           appearance?: ('default' | 'outline') | null;
         };
+        size?: ('default' | 'sm' | 'lg') | null;
         id?: string | null;
       }[]
     | null;
@@ -460,6 +618,84 @@ export interface ContentBlock {
         link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
+          buttonClasses?:
+            | (
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium'
+                | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium'
+                | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium'
+                | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium rounded-full'
+                | 'text-brand-blue hover:text-brand-blue/80 underline-offset-4 hover:underline transition-colors duration-200 font-medium'
+                | 'text-primary hover:text-primary/80 underline-offset-4 hover:underline transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-full'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-full'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95 rounded-xl'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95 rounded-full'
+                | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium'
+                | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium rounded-xl'
+                | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium rounded-full'
+              )
+            | null;
+          icon?:
+            | (
+                | 'none'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-up-right-icon lucide-move-up-right"><path d="M13 5H19V11"/><path d="M19 5L5 19"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw-icon lucide-refresh-cw"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key-round-icon lucide-key-round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift-icon lucide-gift"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-drill-icon lucide-drill"><path d="M10 18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H5a3 3 0 0 1-3-3 1 1 0 0 1 1-1z"/><path d="M13 10H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1l-.81 3.242a1 1 0 0 1-.97.758H8"/><path d="M14 4h3a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-3"/><path d="M18 6h4"/><path d="m5 10-2 8"/><path d="m7 18 2-8"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>'
+              )
+            | null;
+          iconPosition?: ('left' | 'right') | null;
           reference?:
             | ({
                 relationTo: 'pages';
@@ -1001,11 +1237,15 @@ export interface PagesSelect<T extends boolean = true> {
                 | {
                     type?: T;
                     newTab?: T;
+                    buttonClasses?: T;
+                    icon?: T;
+                    iconPosition?: T;
                     reference?: T;
                     url?: T;
                     label?: T;
                     appearance?: T;
                   };
+              size?: T;
               id?: T;
             };
         media?: T;
@@ -1047,11 +1287,15 @@ export interface CallToActionBlockSelect<T extends boolean = true> {
           | {
               type?: T;
               newTab?: T;
+              buttonClasses?: T;
+              icon?: T;
+              iconPosition?: T;
               reference?: T;
               url?: T;
               label?: T;
               appearance?: T;
             };
+        size?: T;
         id?: T;
       };
   id?: T;
@@ -1073,6 +1317,9 @@ export interface ContentBlockSelect<T extends boolean = true> {
           | {
               type?: T;
               newTab?: T;
+              buttonClasses?: T;
+              icon?: T;
+              iconPosition?: T;
               reference?: T;
               url?: T;
               label?: T;
@@ -1543,6 +1790,84 @@ export interface Header {
         link: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
+          buttonClasses?:
+            | (
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium'
+                | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium'
+                | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium'
+                | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium rounded-full'
+                | 'text-brand-blue hover:text-brand-blue/80 underline-offset-4 hover:underline transition-colors duration-200 font-medium'
+                | 'text-primary hover:text-primary/80 underline-offset-4 hover:underline transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-full'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-full'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95 rounded-xl'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95 rounded-full'
+                | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium'
+                | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium rounded-xl'
+                | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium rounded-full'
+              )
+            | null;
+          icon?:
+            | (
+                | 'none'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-up-right-icon lucide-move-up-right"><path d="M13 5H19V11"/><path d="M19 5L5 19"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw-icon lucide-refresh-cw"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key-round-icon lucide-key-round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift-icon lucide-gift"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-drill-icon lucide-drill"><path d="M10 18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H5a3 3 0 0 1-3-3 1 1 0 0 1 1-1z"/><path d="M13 10H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1l-.81 3.242a1 1 0 0 1-.97.758H8"/><path d="M14 4h3a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-3"/><path d="M18 6h4"/><path d="m5 10-2 8"/><path d="m7 18 2-8"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>'
+              )
+            | null;
+          iconPosition?: ('left' | 'right') | null;
           reference?:
             | ({
                 relationTo: 'pages';
@@ -1555,6 +1880,109 @@ export interface Header {
           url?: string | null;
           label: string;
         };
+        id?: string | null;
+      }[]
+    | null;
+  buttons?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          buttonClasses?:
+            | (
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium'
+                | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium'
+                | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium'
+                | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium rounded-full'
+                | 'text-brand-blue hover:text-brand-blue/80 underline-offset-4 hover:underline transition-colors duration-200 font-medium'
+                | 'text-primary hover:text-primary/80 underline-offset-4 hover:underline transition-colors duration-200 font-medium'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium rounded-xl'
+                | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium rounded-full'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-full'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl'
+                | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-full'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95 rounded-xl'
+                | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95 rounded-full'
+                | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium'
+                | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium rounded-xl'
+                | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium rounded-full'
+              )
+            | null;
+          icon?:
+            | (
+                | 'none'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-up-right-icon lucide-move-up-right"><path d="M13 5H19V11"/><path d="M19 5L5 19"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw-icon lucide-refresh-cw"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key-round-icon lucide-key-round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift-icon lucide-gift"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-drill-icon lucide-drill"><path d="M10 18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H5a3 3 0 0 1-3-3 1 1 0 0 1 1-1z"/><path d="M13 10H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1l-.81 3.242a1 1 0 0 1-.97.758H8"/><path d="M14 4h3a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-3"/><path d="M18 6h4"/><path d="m5 10-2 8"/><path d="m7 18 2-8"/></svg>'
+                | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>'
+              )
+            | null;
+          iconPosition?: ('left' | 'right') | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: string | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: string | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        size?: ('default' | 'sm' | 'lg') | null;
         id?: string | null;
       }[]
     | null;
@@ -1567,26 +1995,117 @@ export interface Header {
  */
 export interface Footer {
   id: string;
-  navItems?:
+  footerMotto?: string | null;
+  footerMenus?:
     | {
-        link: {
-          type?: ('reference' | 'custom') | null;
-          newTab?: boolean | null;
-          reference?:
-            | ({
-                relationTo: 'pages';
-                value: string | Page;
-              } | null)
-            | ({
-                relationTo: 'posts';
-                value: string | Post;
-              } | null);
-          url?: string | null;
-          label: string;
-        };
+        title?: string | null;
+        items?:
+          | {
+              link: {
+                type?: ('reference' | 'custom') | null;
+                newTab?: boolean | null;
+                buttonClasses?:
+                  | (
+                      | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue hover:text-brand-blue-foreground transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium rounded-full'
+                      | 'text-brand-blue hover:text-brand-blue/80 underline-offset-4 hover:underline transition-colors duration-200 font-medium'
+                      | 'text-primary hover:text-primary/80 underline-offset-4 hover:underline transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium'
+                      | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium'
+                      | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl'
+                      | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl'
+                      | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-full'
+                      | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl'
+                      | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl'
+                      | 'px-6 py-3 bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-full'
+                      | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95'
+                      | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95 rounded-xl'
+                      | 'px-6 py-3 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95 rounded-full'
+                      | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium'
+                      | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium rounded-xl'
+                      | 'px-6 py-3 bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium rounded-full'
+                    )
+                  | null;
+                icon?:
+                  | (
+                      | 'none'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-up-right-icon lucide-move-up-right"><path d="M13 5H19V11"/><path d="M19 5L5 19"/></svg>'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg>'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw-icon lucide-refresh-cw"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key-round-icon lucide-key-round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg>'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift-icon lucide-gift"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-drill-icon lucide-drill"><path d="M10 18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H5a3 3 0 0 1-3-3 1 1 0 0 1 1-1z"/><path d="M13 10H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1l-.81 3.242a1 1 0 0 1-.97.758H8"/><path d="M14 4h3a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-3"/><path d="M18 6h4"/><path d="m5 10-2 8"/><path d="m7 18 2-8"/></svg>'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>'
+                    )
+                  | null;
+                iconPosition?: ('left' | 'right') | null;
+                reference?:
+                  | ({
+                      relationTo: 'pages';
+                      value: string | Page;
+                    } | null)
+                  | ({
+                      relationTo: 'posts';
+                      value: string | Post;
+                    } | null);
+                url?: string | null;
+                label: string;
+              };
+              id?: string | null;
+            }[]
+          | null;
         id?: string | null;
       }[]
     | null;
+  socialLinks?: {
+    instagram?: string | null;
+    youtube?: string | null;
+    website?: string | null;
+    facebook?: string | null;
+  };
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -1603,10 +2122,32 @@ export interface HeaderSelect<T extends boolean = true> {
           | {
               type?: T;
               newTab?: T;
+              buttonClasses?: T;
+              icon?: T;
+              iconPosition?: T;
               reference?: T;
               url?: T;
               label?: T;
             };
+        id?: T;
+      };
+  buttons?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              buttonClasses?: T;
+              icon?: T;
+              iconPosition?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        size?: T;
         id?: T;
       };
   updatedAt?: T;
@@ -1618,19 +2159,37 @@ export interface HeaderSelect<T extends boolean = true> {
  * via the `definition` "footer_select".
  */
 export interface FooterSelect<T extends boolean = true> {
-  navItems?:
+  footerMotto?: T;
+  footerMenus?:
     | T
     | {
-        link?:
+        title?: T;
+        items?:
           | T
           | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
+              link?:
+                | T
+                | {
+                    type?: T;
+                    newTab?: T;
+                    buttonClasses?: T;
+                    icon?: T;
+                    iconPosition?: T;
+                    reference?: T;
+                    url?: T;
+                    label?: T;
+                  };
+              id?: T;
             };
         id?: T;
+      };
+  socialLinks?:
+    | T
+    | {
+        instagram?: T;
+        youtube?: T;
+        website?: T;
+        facebook?: T;
       };
   updatedAt?: T;
   createdAt?: T;

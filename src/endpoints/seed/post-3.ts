@@ -7,7 +7,7 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
   author,
 }) => {
   return {
-    slug: 'dollar-and-sense-the-financial-forecast',
+    slug: 'getting-involved-and-connecting',
     _status: 'published',
     authors: [author],
     content: {
@@ -95,7 +95,7 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: "Money isn't just currency; ",
+                text: "Become a part of God's Family in GSC. ",
                 version: 1,
               },
               {
@@ -104,7 +104,7 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 2,
                 mode: 'normal',
                 style: '',
-                text: "it's a language. ",
+                text: "Gateway Salvation Church welcomes everyone with arms wide open. ",
                 version: 1,
               },
               {
@@ -113,7 +113,7 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: 'Dive deep into its nuances, where strategy meets intuition in the vast sea of finance.',
+                text: 'We offer a variety of programs and services to help you connect with God, learn more about the Bible, and grow in your faith.',
                 version: 1,
               },
             ],
@@ -132,7 +132,7 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: "Money, in its essence, transcends the mere concept of coins and paper notes; it becomes a profound language that speaks of value, trust, and societal structures. Like any language, it possesses intricate nuances and subtleties that require a discerning understanding. It's in these depths where the calculated world of financial strategy collides with the raw, instinctive nature of human intuition. Just as a seasoned linguist might dissect the syntax and semantics of a sentence, a financial expert navigates the vast and tumultuous ocean of finance, guided not only by logic and data but also by gut feelings and foresight. Every transaction, investment, and financial decision becomes a dialogue in this expansive lexicon of commerce and value.",
+                text: "If you are interested in becoming a member, please contact us to learn more about our new membership class and how you can get involved in our church community. We invite you to join us for worship, fellowship, and spiritual growth. Whether you're visiting for the first time or looking to become a member, we're here to support you on your faith journey.",
                 version: 1,
               },
             ],
@@ -161,7 +161,7 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: 'Stock Market Dynamics: Bulls, Bears, and the Uncertain Middle',
+                text: 'Ways to Connect and Get Involved',
                 version: 1,
               },
             ],
@@ -180,7 +180,7 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: 'The stock market is a realm of vast opportunity but also poses risks. Discover the forces that drive market trends and the strategies employed by top traders to navigate this complex ecosystem. From market analysis to understanding investor psychology, get a comprehensive insight into the world of stocks.',
+                text: 'There are many ways to connect with our church community and grow in your faith. You can watch our services, give to support our ministry, contact us with questions, share your testimony, and submit prayer requests. We believe in the power of community and fellowship.',
                 version: 1,
               },
             ],
@@ -199,7 +199,7 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: "The stock market, often visualized as a bustling arena of numbers and ticker tapes, is as much about human behavior as it is about economics. It's a place where optimism, represented by the bullish rally, meets the caution of bearish downturns, with each vying to dictate the market's direction. But between these two extremes lies an uncertain middle ground, a zone populated by traders and investors who constantly weigh hope against fear. Successful navigation requires more than just financial acumen; it demands an understanding of collective sentiments and the ability to predict not just market movements, but also the reactions of other market participants. In this intricate dance of numbers and nerves, the most astute players are those who master both the hard data and the soft nuances of human behavior.",
+                text: "Gateway Salvation Church is a charity registered in England & Wales no. 1203676. We are committed to creating a secure and inviting space where you can freely pose difficult inquiries and discover a community that stands by you through life's most testing periods. Connect to everything God has for your life through our worship services, fellowship opportunities, and spiritual growth programs.",
                 version: 1,
               },
             ],
@@ -258,11 +258,11 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
     },
     heroImage: heroImage.id,
     meta: {
-      description: `Money isn't just currency; it's a language. Dive deep into its nuances, where strategy meets intuition in the vast sea of finance.`,
+      description: `Become a part of God's Family in GSC. Gateway Salvation Church welcomes everyone with arms wide open.`,
       image: heroImage.id,
-      title: 'Dollar and Sense: The Financial Forecast',
+      title: 'Getting Involved and Connecting',
     },
     relatedPosts: [], // this is populated by the seed script
-    title: 'Dollar and Sense: The Financial Forecast',
+    title: 'Getting Involved and Connecting',
   }
 }

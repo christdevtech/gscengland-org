@@ -1,8 +1,11 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 
 import type { Page } from '@/payload-types'
 
 import RichText from '@/components/RichText'
+import { useTheme } from '@/providers/Theme'
+import { useHeaderTheme } from '@/providers/HeaderTheme'
 
 type LowImpactHeroType =
   | {
@@ -15,6 +18,11 @@ type LowImpactHeroType =
     })
 
 export const LowImpactHero: React.FC<LowImpactHeroType> = ({ children, richText }) => {
+  const { theme } = useTheme()
+  const { setHeaderTheme } = useHeaderTheme()
+  useEffect(() => {
+    setHeaderTheme(theme === 'dark' ? 'dark' : 'light')
+  }, [setHeaderTheme, theme])
   return (
     <div className="container mt-16">
       <div className="max-w-[48rem]">

@@ -10,20 +10,86 @@ export const Footer: GlobalConfig = {
   },
   fields: [
     {
-      name: 'navItems',
+      name: 'footerMotto',
+      type: 'text',
+      defaultValue:
+        'At GSC, we have a mandate from God to evangelize, bring men, and equip them with word of God, by the power of the Holy Spirit.',
+    },
+    // {
+    //   name: 'navItems',
+    //   type: 'array',
+    //   fields: [
+    //     link({
+    //       appearances: false,
+    //     }),
+    //   ],
+    //   maxRows: 6,
+    //   admin: {
+    //     initCollapsed: true,
+    //     components: {
+    //       RowLabel: '@/Footer/RowLabel#RowLabel',
+    //     },
+    //   },
+    // },
+    {
+      name: 'footerMenus',
       type: 'array',
       fields: [
-        link({
-          appearances: false,
-        }),
+        {
+          name: 'title',
+          type: 'text',
+        },
+        {
+          name: 'items',
+          type: 'array',
+          fields: [
+            link({
+              appearances: false,
+            }),
+          ],
+          admin: {
+            initCollapsed: true,
+            components: {
+              RowLabel: '@/Footer/RowLabel#RowLabel',
+            },
+          },
+          maxRows: 6,
+        },
       ],
-      maxRows: 6,
       admin: {
         initCollapsed: true,
         components: {
-          RowLabel: '@/Footer/RowLabel#RowLabel',
+          RowLabel: '@/Footer/RowLabel#MenuLabel',
         },
       },
+      maxRows: 3,
+    },
+    {
+      name: 'socialLinks',
+      type: 'group',
+      fields: [
+        {
+          name: 'instagram',
+          type: 'text',
+          defaultValue:
+            'https://www.instagram.com/gatewaysalvationchurch?utm_source=ig_web_button_share_sheet&igsh=MW95ZG8wbjZ3aGZjYQ==',
+        },
+        {
+          name: 'youtube',
+          type: 'text',
+          defaultValue: 'https://www.youtube.com/channel/UCMICN79DIkhfusOBDPDCscw',
+        },
+        {
+          name: 'website',
+          type: 'text',
+          defaultValue: `${process.env.NEXT_PUBLIC_SERVER_URL}`,
+        },
+        {
+          name: 'facebook',
+          type: 'text',
+          defaultValue: 'https://www.facebook.com/gatewaysalvationchurch',
+        },
+      ],
     },
   ],
   hooks: {

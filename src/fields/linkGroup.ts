@@ -1,5 +1,4 @@
 import type { ArrayField, Field } from 'payload'
-
 import type { LinkAppearances } from './link'
 
 import deepMerge from '@/utilities/deepMerge'
@@ -18,10 +17,18 @@ export const linkGroup: LinkGroupType = ({ appearances, overrides = {} } = {}) =
       link({
         appearances,
       }),
+
+      {
+        name: 'size',
+        type: 'select',
+        defaultValue: 'default',
+        options: [
+          { label: 'Default', value: 'default' },
+          { label: 'Small', value: 'sm' },
+          { label: 'Large', value: 'lg' },
+        ],
+      },
     ],
-    admin: {
-      initCollapsed: true,
-    },
   }
 
   return deepMerge(generatedLinkGroup, overrides)
