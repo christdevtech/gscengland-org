@@ -3,7 +3,7 @@ import { useHeaderTheme } from '@/providers/HeaderTheme'
 import { useTheme } from '@/providers/Theme'
 import React, { useEffect } from 'react'
 
-const index = () => {
+export const NoHero: React.FC = () => {
   const { theme } = useTheme()
   const { setHeaderTheme } = useHeaderTheme()
   useEffect(() => {
@@ -12,4 +12,4 @@ const index = () => {
   return <div className="h-0"></div>
 }
 
-export default index
+export default NoHero

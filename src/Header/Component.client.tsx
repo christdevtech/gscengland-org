@@ -60,6 +60,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
       document.removeEventListener('mousedown', handleClickOutside)
       document.body.style.overflow = 'unset'
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMobileMenuOpen])
 
   const toggleMobileMenu = () => {

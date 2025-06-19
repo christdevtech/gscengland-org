@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { Instagram, Youtube, Twitter, Globe, Facebook, Linkedin } from 'lucide-react'
+import { Instagram, Youtube, Globe, Facebook } from 'lucide-react'
 import { Footer } from '@/payload-types'
 
 const SocialLinks: React.FC<Footer['socialLinks']> = (props) => {
