@@ -11,4 +11,5 @@ services:
       - .env
     volumes:
       - ./public/media:/app/public/media:rw
+    user: '1001:1001'
     restart: always
