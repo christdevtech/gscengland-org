@@ -13,7 +13,7 @@ export const Footer: GlobalConfig = {
       name: 'footerMotto',
       type: 'text',
       defaultValue:
-        'At GSC, we have a mandate from God to evangelize, bring men, and equip them with word of God, by the power of the Holy Spirit.',
+        'Gateway Salvation Church - A place where faith, hope, and love come together. Join our community in worship, fellowship, and service.',
     },
     // {
     //   name: 'navItems',

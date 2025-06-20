@@ -35,7 +35,8 @@ export default buildConfig({
       },
     },
     meta: {
-      title: 'Gateway Salvation Church',
+      title: 'Dashboard',
+      titleSuffix: ' | Gateway Salvation Church',
       icons: [
         {
           url: `${process.env.NEXT_PUBLIC_SERVER_URL}/favicon.png`,
