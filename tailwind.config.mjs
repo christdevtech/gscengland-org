@@ -92,6 +92,14 @@ const config = {
         success: 'hsl(var(--success))',
         error: 'hsl(var(--error))',
         warning: 'hsl(var(--warning))',
+        'brand-blue': {
+          DEFAULT: 'hsl(var(--brand-blue))',
+          foreground: 'hsl(var(--brand-blue-foreground))',
+        },
+        'brand-dark': {
+          DEFAULT: 'hsl(var(--brand-dark))',
+          foreground: 'hsl(var(--brand-dark-foreground))',
+        },
       },
       fontFamily: {
         mono: ['var(--font-geist-mono)'],

@@ -72,6 +72,7 @@ export interface Config {
     media: Media;
     categories: Category;
     users: User;
+    staff: Staff;
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
@@ -88,6 +89,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
+    staff: StaffSelect<false> | StaffSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
@@ -270,7 +272,7 @@ export interface Page {
       | null;
     media?: (string | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
+  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock | StaffBlock)[];
   meta?: {
     title?: string | null;
     /**
@@ -725,6 +727,7 @@ export interface ContentBlock {
  */
 export interface MediaBlock {
   media: string | Media;
+  'border-radius'?: ('rounded-none' | 'rounded-lg' | 'rounded-xl' | 'rounded-2xl') | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'mediaBlock';
@@ -965,6 +968,58 @@ export interface Form {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StaffBlock".
+ */
+export interface StaffBlock {
+  introContent?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  displayBy?: ('category' | 'selection' | 'all') | null;
+  staffCategories?: ('leadership' | 'pastoral' | 'ministry' | 'administrative' | 'support')[] | null;
+  selectedStaff?: (string | Staff)[] | null;
+  layout?: ('grid' | 'list') | null;
+  showBio?: boolean | null;
+  showContact?: boolean | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'staffBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "staff".
+ */
+export interface Staff {
+  id: string;
+  name: string;
+  position: string;
+  profilePicture?: (string | null) | Media;
+  staffCategory: 'leadership' | 'pastoral' | 'ministry' | 'administrative' | 'support';
+  bio?: string | null;
+  email?: string | null;
+  phone?: string | null;
+  /**
+   * Used to order staff members within their category
+   */
+  order?: number | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1157,6 +1212,10 @@ export interface PayloadLockedDocument {
         value: string | User;
       } | null)
     | ({
+        relationTo: 'staff';
+        value: string | Staff;
+      } | null)
+    | ({
         relationTo: 'redirects';
         value: string | Redirect;
       } | null)
@@ -1258,6 +1317,7 @@ export interface PagesSelect<T extends boolean = true> {
         mediaBlock?: T | MediaBlockSelect<T>;
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
+        staffBlock?: T | StaffBlockSelect<T>;
       };
   meta?:
     | T
@@ -1336,6 +1396,7 @@ export interface ContentBlockSelect<T extends boolean = true> {
  */
 export interface MediaBlockSelect<T extends boolean = true> {
   media?: T;
+  'border-radius'?: T;
   id?: T;
   blockName?: T;
 }
@@ -1361,6 +1422,21 @@ export interface FormBlockSelect<T extends boolean = true> {
   form?: T;
   enableIntro?: T;
   introContent?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StaffBlock_select".
+ */
+export interface StaffBlockSelect<T extends boolean = true> {
+  introContent?: T;
+  displayBy?: T;
+  staffCategories?: T;
+  selectedStaff?: T;
+  layout?: T;
+  showBio?: T;
+  showContact?: T;
   id?: T;
   blockName?: T;
 }
@@ -1523,6 +1599,24 @@ export interface UsersSelect<T extends boolean = true> {
   hash?: T;
   loginAttempts?: T;
   lockUntil?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "staff_select".
+ */
+export interface StaffSelect<T extends boolean = true> {
+  name?: T;
+  position?: T;
+  profilePicture?: T;
+  staffCategory?: T;
+  bio?: T;
+  email?: T;
+  phone?: T;
+  order?: T;
+  slug?: T;
+  slugLock?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

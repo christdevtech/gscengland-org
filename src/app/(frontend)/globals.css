@@ -51,9 +51,9 @@
 
     /* Custom theme colors */
     --brand-blue: 210 100% 33%;
-    --brand-blue-foreground: 210 40% 98%;
+    --brand-blue-foreground: 0 0% 100%;
     --brand-dark: 220 9% 15%;
-    --brand-dark-foreground: 210 40% 98%;
+    --brand-dark-foreground: 0 0% 100%;
   }
 
   [data-theme='dark'] {
@@ -91,9 +91,9 @@
 
     /* Custom theme colors - dark mode */
     --brand-blue: 210 100% 45%;
-    --brand-blue-foreground: 222.2 47.4% 11.2%;
+    --brand-blue-foreground: 0 0% 100%;
     --brand-dark: 220 9% 8%;
-    --brand-dark-foreground: 210 40% 98%;
+    --brand-dark-foreground: 0 0% 100%;
   }
 }
 
