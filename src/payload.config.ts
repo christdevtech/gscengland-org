@@ -39,7 +39,7 @@ export default buildConfig({
       titleSuffix: ' | Gateway Salvation Church',
       icons: [
         {
-          url: `${process.env.NEXT_PUBLIC_SERVER_URL}/favicon.png`,
+          url: `${process.env.NEXT_PUBLIC_SERVER_URL}/favicon.jpg`,
         },
       ],
     },
