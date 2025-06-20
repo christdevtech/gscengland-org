@@ -52,8 +52,18 @@
     /* Custom theme colors */
     --brand-blue: 210 100% 33%;
     --brand-blue-foreground: 0 0% 100%;
+    --brand-blue-hover: 210 100% 25%;
+    --brand-blue-hover-foreground: 0 0% 100%;
     --brand-dark: 220 9% 15%;
     --brand-dark-foreground: 0 0% 100%;
+    --brand-dark-hover: 220 9% 8%;
+    --brand-dark-hover-foreground: 0 0% 100%;
+    
+    /* Primary hover states */
+    --primary-hover: 222.2 47.4% 8%;
+    --primary-hover-foreground: 0 0% 100%;
+    --secondary-hover: 210 40% 88%;
+    --secondary-hover-foreground: 222.2 47.4% 11.2%;
   }
 
   [data-theme='dark'] {
@@ -92,8 +102,18 @@
     /* Custom theme colors - dark mode */
     --brand-blue: 210 100% 45%;
     --brand-blue-foreground: 0 0% 100%;
+    --brand-blue-hover: 210 100% 55%;
+    --brand-blue-hover-foreground: 0 0% 100%;
     --brand-dark: 220 9% 8%;
     --brand-dark-foreground: 0 0% 100%;
+    --brand-dark-hover: 220 9% 12%;
+    --brand-dark-hover-foreground: 0 0% 100%;
+    
+    /* Primary hover states - dark mode */
+    --primary-hover: 210 40% 100%;
+    --primary-hover-foreground: 222.2 47.4% 11.2%;
+    --secondary-hover: 217.2 32.6% 22%;
+    --secondary-hover-foreground: 210 40% 98%;
   }
 }
 

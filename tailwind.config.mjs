@@ -83,11 +83,15 @@ const config = {
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
+          hover: 'hsl(var(--primary-hover))',
+          'hover-foreground': 'hsl(var(--primary-hover-foreground))',
         },
         ring: 'hsl(var(--ring))',
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
+          hover: 'hsl(var(--secondary-hover))',
+          'hover-foreground': 'hsl(var(--secondary-hover-foreground))',
         },
         success: 'hsl(var(--success))',
         error: 'hsl(var(--error))',
@@ -95,10 +99,14 @@ const config = {
         'brand-blue': {
           DEFAULT: 'hsl(var(--brand-blue))',
           foreground: 'hsl(var(--brand-blue-foreground))',
+          hover: 'hsl(var(--brand-blue-hover))',
+          'hover-foreground': 'hsl(var(--brand-blue-hover-foreground))',
         },
         'brand-dark': {
           DEFAULT: 'hsl(var(--brand-dark))',
           foreground: 'hsl(var(--brand-dark-foreground))',
+          hover: 'hsl(var(--brand-dark-hover))',
+          'hover-foreground': 'hsl(var(--brand-dark-hover-foreground))',
         },
       },
       fontFamily: {
