@@ -68,7 +68,8 @@ export const PostHero: React.FC<{
         )}
         <div className="absolute pointer-events-none left-0 bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent" />
       </div>
-      <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-black via-transparent via-20% via-black/0 via-40% to-black to-100%"></div>
+      <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-black via-black/70 to-black/0 to-100%"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-b from-black/0 via-black/80 to-black"></div>
     </div>
   )
 }

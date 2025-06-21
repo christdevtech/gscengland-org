@@ -20,8 +20,8 @@ export const HighImpactHero: React.FC<Page['hero']> = ({ links, media, richText 
       className="relative -mt-[10.4rem] flex items-center justify-center text-white overflow-clip"
       data-theme="dark"
     >
-      <div className="container mb-8 z-10 flex items-end justify-center absolute top-[10.4rem] bottom-8">
-        <div className="max-w-[36.5rem] md:text-center">
+      <div className="container pb-8 z-10 flex items-end justify-center absolute top-[10.4rem] bottom-0">
+        <div className="max-w-[56.5rem] md:text-center">
           {richText && <RichText className="mb-6" data={richText} enableGutter={false} />}
           {Array.isArray(links) && links.length > 0 && (
             <ul className="flex md:justify-center gap-4">
@@ -41,7 +41,8 @@ export const HighImpactHero: React.FC<Page['hero']> = ({ links, media, richText 
           <Media fill imgClassName="-z-10 object-cover object-top" priority resource={media} />
         )}
       </div>
-      <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-black via-transparent via-20% via-black/0 via-40% to-black to-100%"></div>
+      <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-black via-black/70 to-black/0 to-100%"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-b from-black/0 via-black/80 to-black"></div>
     </div>
   )
 }
