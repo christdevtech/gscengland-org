@@ -15,129 +15,133 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
     _status: 'published',
     hero: {
       type: 'highImpact',
-      links: [
+      highImpactFields: [
         {
-          link: {
-            type: 'custom',
-            appearance: 'default',
-            label: 'All posts',
-            url: '/posts',
-          },
-        },
-        {
-          link: {
-            type: 'custom',
-            appearance: 'outline',
-            label: 'Contact',
-            url: '/contact',
+          links: [
+            {
+              link: {
+                type: 'custom',
+                appearance: 'default',
+                label: 'All posts',
+                url: '/posts',
+              },
+            },
+            {
+              link: {
+                type: 'custom',
+                appearance: 'outline',
+                label: 'Contact',
+                url: '/contact',
+              },
+            },
+          ],
+          media: heroImage.id,
+          richText: {
+            root: {
+              type: 'root',
+              children: [
+                {
+                  type: 'heading',
+                  children: [
+                    {
+                      type: 'text',
+                      detail: 0,
+                      format: 0,
+                      mode: 'normal',
+                      style: '',
+                      text: 'Gateway Salvation Church',
+                      version: 1,
+                    },
+                  ],
+                  direction: 'ltr',
+                  format: '',
+                  indent: 0,
+                  tag: 'h1',
+                  version: 1,
+                },
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'link',
+                      children: [
+                        {
+                          type: 'text',
+                          detail: 0,
+                          format: 0,
+                          mode: 'normal',
+                          style: '',
+                          text: 'Visit the admin dashboard',
+                          version: 1,
+                        },
+                      ],
+                      direction: 'ltr',
+                      fields: {
+                        linkType: 'custom',
+                        newTab: false,
+                        url: '/admin',
+                      },
+                      format: '',
+                      indent: 0,
+                      version: 3,
+                    },
+                    {
+                      type: 'text',
+                      detail: 0,
+                      format: 0,
+                      mode: 'normal',
+                      style: '',
+                      text: " to begin managing this site's content. We are glad you are here and pray that your visit will be meaningful. ",
+                      version: 1,
+                    },
+                    {
+                      type: 'link',
+                      children: [
+                        {
+                          type: 'text',
+                          detail: 0,
+                          format: 0,
+                          mode: 'normal',
+                          style: '',
+                          text: 'Contact us',
+                          version: 1,
+                        },
+                      ],
+                      direction: 'ltr',
+                      fields: {
+                        linkType: 'custom',
+                        newTab: true,
+                        url: '/contact',
+                      },
+                      format: '',
+                      indent: 0,
+                      version: 3,
+                    },
+                    {
+                      type: 'text',
+                      detail: 0,
+                      format: 0,
+                      mode: 'normal',
+                      style: '',
+                      text: ' to learn more about our church and faith community.',
+                      version: 1,
+                    },
+                  ],
+                  direction: 'ltr',
+                  format: '',
+                  indent: 0,
+                  textFormat: 0,
+                  version: 1,
+                },
+              ],
+              direction: 'ltr',
+              format: '',
+              indent: 0,
+              version: 1,
+            },
           },
         },
       ],
-      media: heroImage.id,
-      richText: {
-        root: {
-          type: 'root',
-          children: [
-            {
-              type: 'heading',
-              children: [
-                {
-                  type: 'text',
-                  detail: 0,
-                  format: 0,
-                  mode: 'normal',
-                  style: '',
-                  text: 'Gateway Salvation Church',
-                  version: 1,
-                },
-              ],
-              direction: 'ltr',
-              format: '',
-              indent: 0,
-              tag: 'h1',
-              version: 1,
-            },
-            {
-              type: 'paragraph',
-              children: [
-                {
-                  type: 'link',
-                  children: [
-                    {
-                      type: 'text',
-                      detail: 0,
-                      format: 0,
-                      mode: 'normal',
-                      style: '',
-                      text: 'Visit the admin dashboard',
-                      version: 1,
-                    },
-                  ],
-                  direction: 'ltr',
-                  fields: {
-                    linkType: 'custom',
-                    newTab: false,
-                    url: '/admin',
-                  },
-                  format: '',
-                  indent: 0,
-                  version: 3,
-                },
-                {
-                  type: 'text',
-                  detail: 0,
-                  format: 0,
-                  mode: 'normal',
-                  style: '',
-                  text: " to begin managing this site's content. We are glad you are here and pray that your visit will be meaningful. ",
-                  version: 1,
-                },
-                {
-                  type: 'link',
-                  children: [
-                    {
-                      type: 'text',
-                      detail: 0,
-                      format: 0,
-                      mode: 'normal',
-                      style: '',
-                      text: 'Contact us',
-                      version: 1,
-                    },
-                  ],
-                  direction: 'ltr',
-                  fields: {
-                    linkType: 'custom',
-                    newTab: true,
-                    url: '/contact',
-                  },
-                  format: '',
-                  indent: 0,
-                  version: 3,
-                },
-                {
-                  type: 'text',
-                  detail: 0,
-                  format: 0,
-                  mode: 'normal',
-                  style: '',
-                  text: ' to learn more about our church and faith community.',
-                  version: 1,
-                },
-              ],
-              direction: 'ltr',
-              format: '',
-              indent: 0,
-              textFormat: 0,
-              version: 1,
-            },
-          ],
-          direction: 'ltr',
-          format: '',
-          indent: 0,
-          version: 1,
-        },
-      },
     },
     layout: [
       {
@@ -211,7 +215,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
                         format: 0,
                         mode: 'normal',
                         style: '',
-                        text: "Join us every Sunday for worship, fellowship, and spiritual growth. Visit our ",
+                        text: 'Join us every Sunday for worship, fellowship, and spiritual growth. Visit our ',
                         version: 1,
                       },
                       {
@@ -231,7 +235,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
                         fields: {
                           linkType: 'custom',
                           newTab: false,
-                          url: '/services'
+                          url: '/services',
                         },
                         format: '',
                         indent: 0,
@@ -296,7 +300,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
                         format: 0,
                         mode: 'normal',
                         style: '',
-                        text: 'Deepen your faith through our weekly Bible study sessions where we explore God\'s word together in fellowship.',
+                        text: "Deepen your faith through our weekly Bible study sessions where we explore God's word together in fellowship.",
                         version: 1,
                       },
                     ],
@@ -422,7 +426,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
                         fields: {
                           linkType: 'custom',
                           newTab: false,
-                          url: '/community'
+                          url: '/community',
                         },
                         format: '',
                         indent: 0,
@@ -634,7 +638,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
                     fields: {
                       linkType: 'custom',
                       newTab: false,
-                      url: '/getting-involved-and-connecting'
+                      url: '/getting-involved-and-connecting',
                     },
                     format: '',
                     indent: 0,
@@ -666,7 +670,8 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
       },
     ],
     meta: {
-      description: 'Gateway Salvation Church - A place where faith, hope, and love come together. Join our community in worship, fellowship, and service.',
+      description:
+        'Gateway Salvation Church - A place where faith, hope, and love come together. Join our community in worship, fellowship, and service.',
       image: heroImage.id,
       title: 'Gateway Salvation Church',
     },
