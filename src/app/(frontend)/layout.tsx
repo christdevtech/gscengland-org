@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { cn } from '@/utilities/ui'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
-import { Urbanist } from 'next/font/google'
+import { Urbanist, Poppins } from 'next/font/google'
 import React from 'react'
 
 import { AdminBar } from '@/components/AdminBar'
@@ -22,12 +22,17 @@ const urbanist = Urbanist({
   weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
 })
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
+})
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
 
   return (
     <html
-      className={cn(urbanist.className, GeistSans.variable, GeistMono.variable)}
+      className={cn(urbanist.className, poppins.className, GeistSans.variable, GeistMono.variable)}
       lang="en"
       suppressHydrationWarning
     >

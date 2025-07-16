@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    font-family: Poppins;
+  }
   h1,
   h2,
   h3,
@@ -58,7 +61,7 @@
     --brand-dark-foreground: 0 0% 100%;
     --brand-dark-hover: 220 9% 8%;
     --brand-dark-hover-foreground: 0 0% 100%;
-    
+
     /* Primary hover states */
     --primary-hover: 222.2 47.4% 8%;
     --primary-hover-foreground: 0 0% 100%;
@@ -108,7 +111,7 @@
     --brand-dark-foreground: 0 0% 100%;
     --brand-dark-hover: 220 9% 12%;
     --brand-dark-hover-foreground: 0 0% 100%;
-    
+
     /* Primary hover states - dark mode */
     --primary-hover: 210 40% 100%;
     --primary-hover-foreground: 222.2 47.4% 11.2%;
