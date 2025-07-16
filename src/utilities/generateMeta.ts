@@ -1,9 +1,16 @@
 import type { Metadata } from 'next'
 
-import type { Media, Page, Post, Config } from '../payload-types'
+import type { Media, Page, Post, Event, Config } from '../payload-types'
 
 import { mergeOpenGraph } from './mergeOpenGraph'
 import { getServerSideURL } from './getURL'
+import { CollectionSlug } from 'payload'
+
+const collectionPrefixMap: Partial<Record<CollectionSlug, string>> = {
+  events: '/events',
+  posts: '/posts',
+  pages: '',
+}
 
 const getImageURL = (image?: Media | Config['db']['defaultIDType'] | null) => {
   const serverUrl = getServerSideURL()
@@ -12,7 +19,6 @@ const getImageURL = (image?: Media | Config['db']['defaultIDType'] | null) => {
 
   if (image && typeof image === 'object' && 'url' in image) {
     const ogUrl = image.sizes?.og?.url
-
     url = ogUrl ? serverUrl + ogUrl : serverUrl + image.url
   }
 
@@ -20,15 +26,20 @@ const getImageURL = (image?: Media | Config['db']['defaultIDType'] | null) => {
 }
 
 export const generateMeta = async (args: {
-  doc: Partial<Page> | Partial<Post> | null
+  doc: Partial<Page> | Partial<Post> | Partial<Event> | null
+  collection: keyof typeof collectionPrefixMap
 }): Promise<Metadata> => {
-  const { doc } = args
+  const { doc, collection } = args
 
   const ogImage = getImageURL(doc?.meta?.image)
 
-  const title = doc?.meta?.title
-    ? doc?.meta?.title + ' | Gateway Salvation Church'
-    : 'Gateway Salvation Church'
+  const metaTitle = doc?.meta?.title || doc?.title || 'Gateway Salvation Church'
+  const title =
+    metaTitle + (metaTitle !== 'Gateway Salvation Church' ? ' | Gateway Salvation Church' : '')
+
+  let path = `${collectionPrefixMap[collection]}/${doc?.slug}`
+
+  const url = getServerSideURL() + path
 
   return {
     description: doc?.meta?.description,
@@ -42,7 +53,7 @@ export const generateMeta = async (args: {
           ]
         : undefined,
       title,
-      url: Array.isArray(doc?.slug) ? doc?.slug.join('/') : '/',
+      url,
     }),
     title,
   }

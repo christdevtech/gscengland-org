@@ -6,3 +6,4 @@
 6. When you are working in a client component and need an icon, first choice should be lucide-react icons and svgs if they do not have something suitable.
 7. Whenever possible, use the types in the payload-types.ts file for the data you are working on so that if we make changes to the collection structure or block structure, the types will be automatically updated.
 8. ALways use the root Readme file as a source of defaultvalue of the data in the configs we create whenever we create configs, unless specified in the request.
+9. Do not use powershell for the terminal but favour command prompt.

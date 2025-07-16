@@ -83,7 +83,7 @@ export const Staff: CollectionConfig = {
         description: 'Used to order staff members within their category',
       },
     },
-    ...slugField(),
+    ...slugField('name'),
   ],
   timestamps: true,
 }
