@@ -37,7 +37,7 @@ export const generateMeta = async (args: {
   const title =
     metaTitle + (metaTitle !== 'Gateway Salvation Church' ? ' | Gateway Salvation Church' : '')
 
-  let path = `${collectionPrefixMap[collection]}/${doc?.slug}`
+  const path = `${collectionPrefixMap[collection]}/${doc?.slug}`
 
   const url = getServerSideURL() + path
 
