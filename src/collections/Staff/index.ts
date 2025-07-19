@@ -37,11 +37,8 @@ export const Staff: CollectionConfig = {
       name: 'staffCategory',
       type: 'select',
       required: true,
+      hasMany: true,
       options: [
-        {
-          label: 'Leadership',
-          value: 'leadership',
-        },
         {
           label: 'Pastoral Staff',
           value: 'pastoral',
@@ -51,12 +48,16 @@ export const Staff: CollectionConfig = {
           value: 'ministry',
         },
         {
+          label: 'Leadership',
+          value: 'leadership',
+        },
+        {
           label: 'Administrative Staff',
           value: 'administrative',
         },
         {
-          label: 'Support Staff',
-          value: 'support',
+          label: 'Church Board',
+          value: 'board',
         },
       ],
     },

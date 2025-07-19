@@ -30,6 +30,42 @@ DA10 0AD
 - Sunday: 10:30 am - 12:30 pm
 - Thursday: 7 pm, via Zoom
 
+## Events
+
+### Upcoming Events
+
+#### 2025 Year of Possibilities
+
+- **Date:** February 28, 2025, from 7:20 AM to 9:50 PM
+- **Details:** 2025 has been declared as our year of possibilities. We claim possibilities in every area in Jesus' name.
+- **Venue:** 16, The Grove, Swanscombe
+
+#### Breakfast with Jesus 2024
+
+- **Date:** December 23, 2024 (time TBD)
+- **Details:** Jesus Christ is the reason behind our celebration. He came to the earth and was born through a divine method.
+- **Venue:** Church Hall at 16 The Grove, Swanscombe
+
+#### Seed Planting Outreach
+
+- **Date:** TBD
+- **Details:** God gave us the direction to reach out and bless our community. We uproot and plant again. We plant righteousness and peace in Swanscombe by faith in Christ Jesus. We uproot evil, sin, and lawlessness in our community.
+- **Venue:** Swanscombe Community
+
+#### The Month of April 2025: Our Month of Growth
+
+- **Date:** April 26, 2025 (time TBD)
+- **Details:** Beloved, the month of April is here again. Our month of growth! Growth in every area of our lives in Christ Jesus!
+- **Venue:** Church Hall
+
+### Past Events
+
+#### A Praying Mother - John 14:14
+
+- **Date:** March 10, 2024, from 10:30 AM to 1:00 PM
+- **Details:** Mothers Day 2024 is here upon us once again. This year we shall be looking at "A Praying Mother". A good and Christian mother understands the power of prayer. They go to God for everything. A Christian mother is a praying mother. They pray for the home and children. There are several women in the Bible who prayed and God came through for them. Come and join us this Sunday to share more about this topic. God bless you all.
+- **Venue:** 16, The Grove, Swanscombe DA10 0AD
+
 ## Contact Information
 
 **Phone:** +44 (0) 1322632375

@@ -4,18 +4,22 @@ import type { Page } from '@/payload-types'
 
 import { ArchiveBlock } from '@/blocks/ArchiveBlock/Component'
 import { CallToActionBlock } from '@/blocks/CallToAction/Component'
+import { CallToActionImageBlock } from '@/blocks/CallToActionImage/Component'
 import { ContentBlock } from '@/blocks/Content/Component'
 import { FormBlock } from '@/blocks/Form/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { StaffBlock } from '@/blocks/StaffBlock/Component'
+import { Spacer } from '@/blocks/Spacer/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
   content: ContentBlock,
   cta: CallToActionBlock,
+  ctaImage: CallToActionImageBlock,
   formBlock: FormBlock,
   mediaBlock: MediaBlock,
   staffBlock: StaffBlock,
+  spacer: Spacer,
 }
 
 export const RenderBlocks: React.FC<{

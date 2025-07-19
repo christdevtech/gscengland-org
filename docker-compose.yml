@@ -13,3 +13,17 @@ services:
       - ./public/media:/app/public/media:rw
     user: '1001:1001'
     restart: always
+#   mongo:
+#     image: mongo:latest
+#     ports:
+#       - '27018:27017'
+#     command:
+#       - --storageEngine=wiredTiger
+#     volumes:
+#       - data:/data/db
+#     logging:
+#       driver: none
+#     restart: always
+
+# volumes:
+#   data:

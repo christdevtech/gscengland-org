@@ -23,21 +23,28 @@ export const StaffGrid: React.FC<StaffGridProps> = (props) => {
   }
 
   // Group staff by category for better organization
-  const groupedStaff = staff.reduce((acc, staffMember) => {
-    const category = staffMember.staffCategory
-    if (!acc[category]) {
-      acc[category] = []
-    }
-    acc[category].push(staffMember)
-    return acc
-  }, {} as Record<string, Staff[]>)
+  const groupedStaff = staff.reduce(
+    (acc, staffMember) => {
+      const categories = Array.isArray(staffMember.staffCategory)
+        ? staffMember.staffCategory
+        : [staffMember.staffCategory]
+      categories.forEach((category) => {
+        if (!acc[category]) {
+          acc[category] = []
+        }
+        acc[category].push(staffMember)
+      })
+      return acc
+    },
+    {} as Record<string, Staff[]>,
+  )
 
   const categoryLabels = {
     leadership: 'Leadership',
     pastoral: 'Pastoral Staff',
     ministry: 'Ministry Leaders',
     administrative: 'Administrative Staff',
-    support: 'Support Staff',
+    board: 'Church Board',
   }
 
   return (
@@ -49,9 +56,7 @@ export const StaffGrid: React.FC<StaffGridProps> = (props) => {
           </h3>
           <div
             className={cn(
-              layout === 'grid'
-                ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'
-                : 'space-y-6'
+              layout === 'grid' ? 'flex flex-wrap items-start justify-center' : 'space-y-6',
             )}
           >
             {categoryStaff.map((staffMember, index) => (
@@ -61,6 +66,11 @@ export const StaffGrid: React.FC<StaffGridProps> = (props) => {
                 layout={layout}
                 showBio={showBio}
                 showContact={showContact}
+                className={
+                  layout === 'grid'
+                    ? 'basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 p-4'
+                    : undefined
+                }
               />
             ))}
           </div>
