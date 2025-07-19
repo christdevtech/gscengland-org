@@ -22,7 +22,7 @@ export const CallToActionImageBlock: React.FC<CallToActionImageBlockProps> = ({
       )}
       <div className="absolute inset-0 bg-black opacity-30"></div> {/* Overlay for readability */}
       <div className="container relative z-10 mx-auto text-foreground">
-        <div className="relative max-w-3xl mx-auto bg-background bg-opacity-80 p-8 md:px-12 md:py-16 rounded-lg shadow-lg text-wrap">
+        <div className="relative max-w-3xl mx-auto bg-background/70 bg-opacity-80 p-8 md:px-12 md:py-16 rounded-lg shadow-lg text-wrap">
           {addQuote && (
             <QuoteIcon className="absolute top-1/3 right-1/4 h-32 w-32 text-blue-600/10" />
           )}
