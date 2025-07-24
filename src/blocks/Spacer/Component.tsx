@@ -10,12 +10,36 @@ type Props = SpacerBlock & {
 export const Spacer: React.FC<Props> = (props) => {
   const { heightMobile = 16, heightTablet = 32, heightDesktop = 48, className } = props
 
+  const spacerClass = `spacer-${heightMobile}-${heightTablet}-${heightDesktop}`
+
   return (
     <div
-      className={cn(
-        `h-[${heightMobile}px] md:h-[${heightTablet}px] lg:h-[${heightDesktop}px]`,
-        className
-      )}
-    />
+      className={cn('w-full', spacerClass, className)}
+      style={{
+        '--height-mobile': `${heightMobile}px`,
+        '--height-tablet': `${heightTablet}px`,
+        '--height-desktop': `${heightDesktop}px`,
+        height: `var(--height-mobile)`,
+      } as React.CSSProperties & {
+        '--height-mobile': string
+        '--height-tablet': string
+        '--height-desktop': string
+      }}
+    >
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @media (min-width: 768px) {
+            .${spacerClass} {
+              height: var(--height-tablet) !important;
+            }
+          }
+          @media (min-width: 1024px) {
+            .${spacerClass} {
+              height: var(--height-desktop) !important;
+            }
+          }
+        `
+      }} />
+    </div>
   )
 }

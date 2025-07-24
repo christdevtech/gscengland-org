@@ -68,7 +68,7 @@ export const StaffGrid: React.FC<StaffGridProps> = (props) => {
                 showContact={showContact}
                 className={
                   layout === 'grid'
-                    ? 'basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 p-4'
+                    ? 'basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 py-4 sm:px-4'
                     : undefined
                 }
               />

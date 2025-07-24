@@ -6,6 +6,7 @@ import { ArchiveBlock } from '@/blocks/ArchiveBlock/Component'
 import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { CallToActionImageBlock } from '@/blocks/CallToActionImage/Component'
 import { ContentBlock } from '@/blocks/Content/Component'
+import { ContentImageBlock } from '@/blocks/ContentImageBlock/Component'
 import { FormBlock } from '@/blocks/Form/Component'
 import { IntroBlock } from '@/blocks/IntroBlock/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
@@ -15,6 +16,7 @@ import { Spacer } from '@/blocks/Spacer/Component'
 const blockComponents = {
   archive: ArchiveBlock,
   content: ContentBlock,
+  contentImageBlock: ContentImageBlock,
   cta: CallToActionBlock,
   ctaImage: CallToActionImageBlock,
   formBlock: FormBlock,

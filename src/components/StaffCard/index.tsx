@@ -90,7 +90,7 @@ export const StaffCard: React.FC<StaffCardProps> = (props) => {
         <h4 className="text-xl font-bold text-gray-900 dark:text-white">{staff.name}</h4>
         <p className="text-gray-600 dark:text-gray-400 font-medium">{staff.position}</p>
         {showBio && staff.bio && (
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-4 line-clamp-4 hover:line-clamp-none leading-relaxed">
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-4 line-clamp-4 hover:line-clamp-none leading-relaxed transition-line-clamp duration-500">
             {staff.bio}
           </p>
         )}

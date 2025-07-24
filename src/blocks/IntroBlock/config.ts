@@ -8,14 +8,14 @@ export const IntroBlock: Block = {
       name: 'subtitle',
       type: 'text',
       label: 'Subtitle',
-      defaultValue: 'WELCOME TO OUR CHURCH',
+      defaultValue: "You May Come In As A Stranger But You'll Leave As Family",
     },
     {
       name: 'title',
       type: 'text',
       required: true,
       label: 'Title',
-      defaultValue: "You May Come In As A Stranger But You'll Leave As Family",
+      defaultValue: 'Welcome to our Church',
     },
     {
       name: 'description',

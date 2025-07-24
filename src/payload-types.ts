@@ -438,6 +438,7 @@ export interface Page {
     | CallToActionBlock
     | CallToActionImageBlock
     | ContentBlock
+    | ContentImageBlock
     | MediaBlock
     | ArchiveBlock
     | FormBlock
@@ -1075,6 +1076,161 @@ export interface ContentBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'content';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ContentImageBlock".
+ */
+export interface ContentImageBlock {
+  introContent?: {
+    subtitle?: string | null;
+    title?: string | null;
+    description?: string | null;
+  };
+  contentRows?:
+    | {
+        title: string;
+        description?: string | null;
+        /**
+         * Links will be displayed under the title and description, aligned to the left
+         */
+        links?:
+          | {
+              link: {
+                type?: ('reference' | 'custom') | null;
+                newTab?: boolean | null;
+                buttonClasses?:
+                  | (
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue-hover hover:text-brand-blue-hover-foreground transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue-hover hover:text-brand-blue-hover-foreground transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue-hover hover:text-brand-blue-hover-foreground transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark-hover hover:text-brand-dark-hover-foreground transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark-hover hover:text-brand-dark-hover-foreground transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark-hover hover:text-brand-dark-hover-foreground transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue-hover hover:text-brand-blue-hover-foreground transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue-hover hover:text-brand-blue-hover-foreground transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg border-2 border-brand-blue text-brand-blue bg-transparent hover:bg-brand-blue-hover hover:text-brand-blue-hover-foreground transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg border-2 border-brand-dark text-brand-dark bg-transparent hover:bg-brand-dark hover:text-brand-dark-foreground transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg text-brand-blue bg-transparent hover:bg-brand-blue/10 transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg text-brand-dark bg-transparent hover:bg-brand-dark/10 transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-primary text-primary-foreground hover:bg-primary-hover hover:text-primary-hover-foreground transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-primary text-primary-foreground hover:bg-primary-hover hover:text-primary-hover-foreground transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-primary text-primary-foreground hover:bg-primary-hover hover:text-primary-hover-foreground transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-secondary text-secondary-foreground hover:bg-secondary-hover hover:text-secondary-hover-foreground transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-secondary text-secondary-foreground hover:bg-secondary-hover hover:text-secondary-hover-foreground transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-secondary text-secondary-foreground hover:bg-secondary-hover hover:text-secondary-hover-foreground transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg border-2 border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-success text-white hover:bg-success/90 transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-warning text-black hover:bg-warning/90 transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-muted text-muted-foreground hover:bg-muted/80 transition-colors duration-200 font-medium rounded-full'
+                      | 'text-brand-blue hover:text-brand-blue/80 underline-offset-4 hover:underline transition-colors duration-200 font-medium'
+                      | 'text-primary hover:text-primary/80 underline-offset-4 hover:underline transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-gradient-to-r from-brand-blue to-brand-blue/80 text-brand-blue-foreground hover:from-brand-blue/90 hover:to-brand-blue/70 transition-all duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-gradient-to-r from-brand-dark to-brand-dark/80 text-brand-dark-foreground hover:from-brand-dark/90 hover:to-brand-dark/70 transition-all duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-dark text-brand-dark-foreground hover:bg-brand-dark/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95 rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 transition-all duration-200 font-medium transform hover:scale-105 active:scale-95 rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-white text-brand-blue hover:bg-gray-50 hover:text-brand-blue-hover transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-white text-brand-blue hover:bg-gray-50 hover:text-brand-blue-hover transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-white text-brand-blue hover:bg-gray-50 hover:text-brand-blue-hover transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-white text-brand-dark hover:bg-gray-50 hover:text-brand-dark-hover transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-white text-brand-dark hover:bg-gray-50 hover:text-brand-dark-hover transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-white text-brand-dark hover:bg-gray-50 hover:text-brand-dark-hover transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-white text-primary hover:bg-gray-50 hover:text-primary-hover transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-white text-primary hover:bg-gray-50 hover:text-primary-hover transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-white text-primary hover:bg-gray-50 hover:text-primary-hover transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-white text-secondary hover:bg-gray-50 hover:text-secondary-hover transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-white text-secondary hover:bg-gray-50 hover:text-secondary-hover transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-white text-secondary hover:bg-gray-50 hover:text-secondary-hover transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-gray-100 text-brand-blue hover:bg-gray-200 hover:text-brand-blue-hover transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-gray-100 text-brand-blue hover:bg-gray-200 hover:text-brand-blue-hover transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-gray-100 text-brand-blue hover:bg-gray-200 hover:text-brand-blue-hover transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-gray-100 text-brand-dark hover:bg-gray-200 hover:text-brand-dark-hover transition-colors duration-200 font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-gray-100 text-brand-dark hover:bg-gray-200 hover:text-brand-dark-hover transition-colors duration-200 font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-gray-100 text-brand-dark hover:bg-gray-200 hover:text-brand-dark-hover transition-colors duration-200 font-medium rounded-full'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium rounded-xl'
+                      | 'px-6 py-3 md:px-10 md:py-6 md:text-lg bg-brand-blue/50 text-brand-blue-foreground/50 cursor-not-allowed font-medium rounded-full'
+                    )
+                  | null;
+                icon?:
+                  | (
+                      | 'none'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-up-right-icon lucide-move-up-right"><path d="M13 5H19V11"/><path d="M19 5L5 19"/></svg>'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg>'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw-icon lucide-refresh-cw"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key-round-icon lucide-key-round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg>'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift-icon lucide-gift"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-drill-icon lucide-drill"><path d="M10 18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H5a3 3 0 0 1-3-3 1 1 0 0 1 1-1z"/><path d="M13 10H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1l-.81 3.242a1 1 0 0 1-.97.758H8"/><path d="M14 4h3a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-3"/><path d="M18 6h4"/><path d="m5 10-2 8"/><path d="m7 18 2-8"/></svg>'
+                      | '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>'
+                    )
+                  | null;
+                iconPosition?: ('left' | 'right') | null;
+                reference?:
+                  | ({
+                      relationTo: 'pages';
+                      value: string | Page;
+                    } | null)
+                  | ({
+                      relationTo: 'posts';
+                      value: string | Post;
+                    } | null);
+                url?: string | null;
+                label: string;
+                /**
+                 * Choose how the link should be rendered.
+                 */
+                appearance?: ('default' | 'outline') | null;
+              };
+              size?: ('default' | 'sm' | 'lg') | null;
+              id?: string | null;
+            }[]
+          | null;
+        image: string | Media;
+        borderRadius: 'rounded-none' | 'rounded-sm' | 'rounded-md' | 'rounded-lg' | 'rounded-xl' | 'rounded-2xl';
+        /**
+         * Choose whether the image appears on the left or right side on desktop
+         */
+        imagePosition?: ('left' | 'right') | null;
+        /**
+         * Choose the aspect ratio for the image
+         */
+        aspectRatio: 'aspect-video' | 'aspect-[4/3]' | 'aspect-[3/2]' | 'aspect-square' | 'aspect-[3/4]';
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'contentImageBlock';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1802,6 +1958,7 @@ export interface PagesSelect<T extends boolean = true> {
         cta?: T | CallToActionBlockSelect<T>;
         ctaImage?: T | CallToActionImageBlockSelect<T>;
         content?: T | ContentBlockSelect<T>;
+        contentImageBlock?: T | ContentImageBlockSelect<T>;
         mediaBlock?: T | MediaBlockSelect<T>;
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
@@ -1905,6 +2062,51 @@ export interface ContentBlockSelect<T extends boolean = true> {
               label?: T;
               appearance?: T;
             };
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ContentImageBlock_select".
+ */
+export interface ContentImageBlockSelect<T extends boolean = true> {
+  introContent?:
+    | T
+    | {
+        subtitle?: T;
+        title?: T;
+        description?: T;
+      };
+  contentRows?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        links?:
+          | T
+          | {
+              link?:
+                | T
+                | {
+                    type?: T;
+                    newTab?: T;
+                    buttonClasses?: T;
+                    icon?: T;
+                    iconPosition?: T;
+                    reference?: T;
+                    url?: T;
+                    label?: T;
+                    appearance?: T;
+                  };
+              size?: T;
+              id?: T;
+            };
+        image?: T;
+        borderRadius?: T;
+        imagePosition?: T;
+        aspectRatio?: T;
         id?: T;
       };
   id?: T;

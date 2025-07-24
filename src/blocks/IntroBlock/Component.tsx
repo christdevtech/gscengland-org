@@ -41,7 +41,7 @@ export const IntroBlock: React.FC<Props> = ({
           </p>
         )}
         {title && (
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-foreground mb-6 uppercase">
             {title}
           </h2>
         )}
