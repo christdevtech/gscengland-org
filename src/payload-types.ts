@@ -441,6 +441,7 @@ export interface Page {
     | MediaBlock
     | ArchiveBlock
     | FormBlock
+    | IntroBlock
     | StaffBlock
     | SpacerBlock
   )[];
@@ -1322,6 +1323,26 @@ export interface Form {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "IntroBlock".
+ */
+export interface IntroBlock {
+  subtitle?: string | null;
+  title: string;
+  description?: string | null;
+  images: {
+    image: string | Media;
+    id?: string | null;
+  }[];
+  /**
+   * Choose the aspect ratio for all images in the slider
+   */
+  aspectRatio?: ('aspect-video' | 'aspect-[4/3]' | 'aspect-[3/2]' | 'aspect-square' | 'aspect-[3/4]') | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'introBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "StaffBlock".
  */
 export interface StaffBlock {
@@ -1784,6 +1805,7 @@ export interface PagesSelect<T extends boolean = true> {
         mediaBlock?: T | MediaBlockSelect<T>;
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
+        introBlock?: T | IntroBlockSelect<T>;
         staffBlock?: T | StaffBlockSelect<T>;
         spacer?: T | SpacerBlockSelect<T>;
       };
@@ -1920,6 +1942,24 @@ export interface FormBlockSelect<T extends boolean = true> {
   form?: T;
   enableIntro?: T;
   introContent?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "IntroBlock_select".
+ */
+export interface IntroBlockSelect<T extends boolean = true> {
+  subtitle?: T;
+  title?: T;
+  description?: T;
+  images?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  aspectRatio?: T;
   id?: T;
   blockName?: T;
 }
