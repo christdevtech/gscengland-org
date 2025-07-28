@@ -14,12 +14,12 @@ const BeforeDashboard: React.FC = () => {
       <Banner className={`${baseClass}__banner`} type="success">
         <h4>Welcome to your GSC admin dashboard!</h4>
       </Banner>
-      Here&apos;s what to do next:
+      {/* Here&apos;s what to do next:
       <ul className={`${baseClass}__instructions`}>
         <li>
           Use this link to <SeedButton />, to see what the website looks like at the start.
         </li>
-      </ul>
+      </ul> */}
       <h3>Quick Links</h3>
       <div className={`${baseClass}__buttons`}>
         <Link href={'/'} target="_blank">
