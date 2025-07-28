@@ -1,12 +1,12 @@
 import type { Metadata } from 'next/types'
 
-import { CollectionArchive } from '@/components/CollectionArchive'
+import { SearchResults } from '@/components/SearchResults'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import React from 'react'
 import { Search } from '@/search/Component'
 import PageClient from './page.client'
-import { CardPostData } from '@/components/Card'
+import { SearchCardData } from '@/components/SearchCard'
 
 type Args = {
   searchParams: Promise<{
@@ -17,7 +17,7 @@ export default async function Page({ searchParams: searchParamsPromise }: Args) 
   const { q: query } = await searchParamsPromise
   const payload = await getPayload({ config: configPromise })
 
-  const posts = await payload.find({
+  const searchResults = await payload.find({
     collection: 'search',
     depth: 1,
     limit: 12,
@@ -26,6 +26,7 @@ export default async function Page({ searchParams: searchParamsPromise }: Args) 
       slug: true,
       categories: true,
       meta: true,
+      contentType: true,
     },
     // pagination: false reduces overhead if you don't need totalDocs
     pagination: false,
@@ -72,8 +73,8 @@ export default async function Page({ searchParams: searchParamsPromise }: Args) 
         </div>
       </div>
 
-      {posts.totalDocs > 0 ? (
-        <CollectionArchive posts={posts.docs as CardPostData[]} />
+      {searchResults.totalDocs > 0 ? (
+        <SearchResults results={searchResults.docs as SearchCardData[]} />
       ) : (
         <div className="container">No results found.</div>
       )}

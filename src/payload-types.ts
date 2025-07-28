@@ -435,6 +435,7 @@ export interface Page {
       | null;
   };
   layout: (
+    | AccordionBlock
     | CallToActionBlock
     | CallToActionImageBlock
     | ContentBlock
@@ -638,6 +639,55 @@ export interface User {
   loginAttempts?: number | null;
   lockUntil?: string | null;
   password?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "AccordionBlock".
+ */
+export interface AccordionBlock {
+  introContent?: {
+    subtitle?: string | null;
+    title?: string | null;
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  accordionItems?:
+    | {
+        title: string;
+        content: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'accordionBlock';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1283,6 +1333,7 @@ export interface ArchiveBlock {
  */
 export interface FormBlock {
   form: string | Form;
+  isContactPageForm?: boolean | null;
   enableIntro?: boolean | null;
   introContent?: {
     root: {
@@ -1299,6 +1350,20 @@ export interface FormBlock {
     };
     [k: string]: unknown;
   } | null;
+  contactInfo?: {
+    address?: string | null;
+    phone?: string | null;
+    email?: string | null;
+  };
+  bgColor?:
+    | (
+        | 'bg-white'
+        | 'bg-card'
+        | 'bg-primary text-primary-foreground'
+        | 'bg-accent text-accent-foreground'
+        | 'bg-brand-blue text-brand-blue-foreground'
+      )
+    | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'formBlock';
@@ -1684,11 +1749,17 @@ export interface Search {
   id: string;
   title?: string | null;
   priority?: number | null;
-  doc: {
-    relationTo: 'posts';
-    value: string | Post;
-  };
+  doc:
+    | {
+        relationTo: 'posts';
+        value: string | Post;
+      }
+    | {
+        relationTo: 'events';
+        value: string | Event;
+      };
   slug?: string | null;
+  contentType?: string | null;
   meta?: {
     title?: string | null;
     description?: string | null;
@@ -1955,6 +2026,7 @@ export interface PagesSelect<T extends boolean = true> {
   layout?:
     | T
     | {
+        accordionBlock?: T | AccordionBlockSelect<T>;
         cta?: T | CallToActionBlockSelect<T>;
         ctaImage?: T | CallToActionImageBlockSelect<T>;
         content?: T | ContentBlockSelect<T>;
@@ -1979,6 +2051,28 @@ export interface PagesSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "AccordionBlock_select".
+ */
+export interface AccordionBlockSelect<T extends boolean = true> {
+  introContent?:
+    | T
+    | {
+        subtitle?: T;
+        title?: T;
+        description?: T;
+      };
+  accordionItems?:
+    | T
+    | {
+        title?: T;
+        content?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2142,8 +2236,17 @@ export interface ArchiveBlockSelect<T extends boolean = true> {
  */
 export interface FormBlockSelect<T extends boolean = true> {
   form?: T;
+  isContactPageForm?: T;
   enableIntro?: T;
   introContent?: T;
+  contactInfo?:
+    | T
+    | {
+        address?: T;
+        phone?: T;
+        email?: T;
+      };
+  bgColor?: T;
   id?: T;
   blockName?: T;
 }
@@ -2583,6 +2686,7 @@ export interface SearchSelect<T extends boolean = true> {
   priority?: T;
   doc?: T;
   slug?: T;
+  contentType?: T;
   meta?:
     | T
     | {

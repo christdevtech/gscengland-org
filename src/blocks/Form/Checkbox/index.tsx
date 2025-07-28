@@ -30,14 +30,13 @@ export const Checkbox: React.FC<
             setValue(props.name, checked)
           }}
         />
-        <Label htmlFor={name}>
-          {required && (
-            <span className="required">
-              * <span className="sr-only">(required)</span>
-            </span>
-          )}
-          {label}
-        </Label>
+        {label && (
+          <Label
+            htmlFor={name}
+            dangerouslySetInnerHTML={{ __html: label }}
+            className="font-normal leading-tight text-sm"
+          ></Label>
+        )}
       </div>
       {errors[name] && <Error name={name} />}
     </Width>

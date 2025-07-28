@@ -17,6 +17,7 @@ export const beforeSyncWithSearch: BeforeSync = async ({ req, originalDoc, searc
       description: meta?.description,
     },
     categories: [],
+    contentType: collection, // Add content type to distinguish between posts and events
   }
 
   if (categories && Array.isArray(categories) && categories.length > 0) {

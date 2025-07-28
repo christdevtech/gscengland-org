@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 
 import type { Page } from '@/payload-types'
 
+import { AccordionBlock } from '@/blocks/AccordionBlock/Component'
 import { ArchiveBlock } from '@/blocks/ArchiveBlock/Component'
 import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { CallToActionImageBlock } from '@/blocks/CallToActionImage/Component'
@@ -14,6 +15,7 @@ import { StaffBlock } from '@/blocks/StaffBlock/Component'
 import { Spacer } from '@/blocks/Spacer/Component'
 
 const blockComponents = {
+  accordionBlock: AccordionBlock,
   archive: ArchiveBlock,
   content: ContentBlock,
   contentImageBlock: ContentImageBlock,
