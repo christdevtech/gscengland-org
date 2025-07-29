@@ -44,7 +44,7 @@ export const StaffGrid: React.FC<StaffGridProps> = (props) => {
     pastoral: 'Pastoral Staff',
     ministry: 'Ministry Leaders',
     administrative: 'Administrative Staff',
-    board: 'Church Board',
+    board: 'Board of Trustees',
   }
 
   return (
