@@ -61,7 +61,7 @@ export const StaffBlock: React.FC<
     <div className="py-16" id={`block-${id}`}>
       {introContent && (
         <div className="container mb-16">
-          <RichText className="ms-0 max-w-[48rem]" data={introContent} enableGutter={false} />
+          <RichText className="mx-auto max-w-[48rem]" data={introContent} enableGutter={false} />
         </div>
       )}
       <StaffGrid

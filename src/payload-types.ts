@@ -278,6 +278,10 @@ export interface Page {
               | ({
                   relationTo: 'posts';
                   value: string | Post;
+                } | null)
+              | ({
+                  relationTo: 'events';
+                  value: string | Event;
                 } | null);
             url?: string | null;
             label: string;
@@ -418,6 +422,10 @@ export interface Page {
                     | ({
                         relationTo: 'posts';
                         value: string | Post;
+                      } | null)
+                    | ({
+                        relationTo: 'events';
+                        value: string | Event;
                       } | null);
                   url?: string | null;
                   label: string;
@@ -643,6 +651,76 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "events".
+ */
+export interface Event {
+  id: string;
+  title: string;
+  description?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  image?: (string | null) | Media;
+  isVirtual?: boolean | null;
+  venue?: string | null;
+  isMultiDay?: boolean | null;
+  startDate?: string | null;
+  endDate?: string | null;
+  date?: string | null;
+  sessions?:
+    | {
+        sessionName?: string | null;
+        sessionDate: string;
+        startTime: string;
+        endTime: string;
+        description?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+      }[]
+    | null;
+  eventGallery?: (string | Media)[] | null;
+  relatedEvents?: (string | Event)[] | null;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (string | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "AccordionBlock".
  */
 export interface AccordionBlock {
@@ -819,6 +897,10 @@ export interface CallToActionBlock {
             | ({
                 relationTo: 'posts';
                 value: string | Post;
+              } | null)
+            | ({
+                relationTo: 'events';
+                value: string | Event;
               } | null);
           url?: string | null;
           label: string;
@@ -965,6 +1047,10 @@ export interface CallToActionImageBlock {
             | ({
                 relationTo: 'posts';
                 value: string | Post;
+              } | null)
+            | ({
+                relationTo: 'events';
+                value: string | Event;
               } | null);
           url?: string | null;
           label: string;
@@ -1113,6 +1199,10 @@ export interface ContentBlock {
             | ({
                 relationTo: 'posts';
                 value: string | Post;
+              } | null)
+            | ({
+                relationTo: 'events';
+                value: string | Event;
               } | null);
           url?: string | null;
           label: string;
@@ -1254,6 +1344,10 @@ export interface ContentImageBlock {
                   | ({
                       relationTo: 'posts';
                       value: string | Post;
+                    } | null)
+                  | ({
+                      relationTo: 'events';
+                      value: string | Event;
                     } | null);
                 url?: string | null;
                 label: string;
@@ -1356,76 +1450,6 @@ export interface EventsBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'eventsBlock';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "events".
- */
-export interface Event {
-  id: string;
-  title: string;
-  description?: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  image?: (string | null) | Media;
-  isVirtual?: boolean | null;
-  venue?: string | null;
-  isMultiDay?: boolean | null;
-  startDate?: string | null;
-  endDate?: string | null;
-  date?: string | null;
-  sessions?:
-    | {
-        sessionName?: string | null;
-        sessionDate: string;
-        startTime: string;
-        endTime: string;
-        description?: {
-          root: {
-            type: string;
-            children: {
-              type: string;
-              version: number;
-              [k: string]: unknown;
-            }[];
-            direction: ('ltr' | 'rtl') | null;
-            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-            indent: number;
-            version: number;
-          };
-          [k: string]: unknown;
-        } | null;
-        id?: string | null;
-      }[]
-    | null;
-  eventGallery?: (string | Media)[] | null;
-  relatedEvents?: (string | Event)[] | null;
-  meta?: {
-    title?: string | null;
-    /**
-     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
-     */
-    image?: (string | null) | Media;
-    description?: string | null;
-  };
-  publishedAt?: string | null;
-  slug?: string | null;
-  slugLock?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2928,6 +2952,10 @@ export interface Header {
             | ({
                 relationTo: 'posts';
                 value: string | Post;
+              } | null)
+            | ({
+                relationTo: 'events';
+                value: string | Event;
               } | null);
           url?: string | null;
           label: string;
@@ -3044,6 +3072,10 @@ export interface Header {
             | ({
                 relationTo: 'posts';
                 value: string | Post;
+              } | null)
+            | ({
+                relationTo: 'events';
+                value: string | Event;
               } | null);
           url?: string | null;
           label: string;
@@ -3178,6 +3210,10 @@ export interface Footer {
                   | ({
                       relationTo: 'posts';
                       value: string | Post;
+                    } | null)
+                  | ({
+                      relationTo: 'events';
+                      value: string | Event;
                     } | null);
                 url?: string | null;
                 label: string;

@@ -1,4 +1,5 @@
 import {
+  AlignFeature,
   FixedToolbarFeature,
   HeadingFeature,
   InlineToolbarFeature,
@@ -39,6 +40,7 @@ export const AccordionBlock: Block = {
                 HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
                 FixedToolbarFeature(),
                 InlineToolbarFeature(),
+                AlignFeature(),
               ]
             },
           }),
@@ -94,7 +96,7 @@ export const AccordionBlock: Block = {
           label: 'Accordion Content',
           editor: lexicalEditor({
             features: ({ rootFeatures }) => {
-              return [...rootFeatures, InlineToolbarFeature()]
+              return [...rootFeatures, InlineToolbarFeature(), AlignFeature()]
             },
           }),
           required: true,
