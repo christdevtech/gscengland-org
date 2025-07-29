@@ -1392,6 +1392,21 @@ export interface Event {
         sessionDate: string;
         startTime: string;
         endTime: string;
+        description?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
         id?: string | null;
       }[]
     | null;
@@ -2523,6 +2538,7 @@ export interface EventsSelect<T extends boolean = true> {
         sessionDate?: T;
         startTime?: T;
         endTime?: T;
+        description?: T;
         id?: T;
       };
   eventGallery?: T;
