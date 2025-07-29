@@ -66,6 +66,23 @@ export const Events: CollectionConfig = {
         {
           fields: [
             {
+              name: 'description',
+              type: 'richText',
+              editor: lexicalEditor({
+                features: ({ rootFeatures }) => {
+                  return [
+                    ...rootFeatures,
+                    HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
+                    BlocksFeature({ blocks: [Banner, Code, MediaBlock] }),
+                    FixedToolbarFeature(),
+                    InlineToolbarFeature(),
+                    HorizontalRuleFeature(),
+                  ]
+                },
+              }),
+              label: 'Event Description',
+            },
+            {
               name: 'image',
               type: 'upload',
               relationTo: 'media',
@@ -171,41 +188,7 @@ export const Events: CollectionConfig = {
                   label: 'End Time',
                   required: true,
                 },
-                {
-                  name: 'description',
-                  type: 'richText',
-                  editor: lexicalEditor({
-                    features: ({ rootFeatures }) => {
-                      return [
-                        ...rootFeatures,
-                        HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                        BlocksFeature({ blocks: [Banner, Code, MediaBlock] }),
-                        FixedToolbarFeature(),
-                        InlineToolbarFeature(),
-                        HorizontalRuleFeature(),
-                      ]
-                    },
-                  }),
-                  label: 'Description',
-                },
               ],
-            },
-            {
-              name: 'description',
-              type: 'richText',
-              editor: lexicalEditor({
-                features: ({ rootFeatures }) => {
-                  return [
-                    ...rootFeatures,
-                    HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    BlocksFeature({ blocks: [Banner, Code, MediaBlock] }),
-                    FixedToolbarFeature(),
-                    InlineToolbarFeature(),
-                    HorizontalRuleFeature(),
-                  ]
-                },
-              }),
-              label: 'Description',
             },
             {
               name: 'eventGallery',

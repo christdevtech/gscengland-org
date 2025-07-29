@@ -8,6 +8,7 @@ import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { CallToActionImageBlock } from '@/blocks/CallToActionImage/Component'
 import { ContentBlock } from '@/blocks/Content/Component'
 import { ContentImageBlock } from '@/blocks/ContentImageBlock/Component'
+import { EventsBlock } from '@/blocks/EventsBlock/Component'
 import { FormBlock } from '@/blocks/Form/Component'
 import { IntroBlock } from '@/blocks/IntroBlock/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
@@ -21,6 +22,7 @@ const blockComponents = {
   contentImageBlock: ContentImageBlock,
   cta: CallToActionBlock,
   ctaImage: CallToActionImageBlock,
+  eventsBlock: EventsBlock,
   formBlock: FormBlock,
   introBlock: IntroBlock,
   mediaBlock: MediaBlock,

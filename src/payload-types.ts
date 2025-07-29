@@ -442,6 +442,7 @@ export interface Page {
     | ContentImageBlock
     | MediaBlock
     | ArchiveBlock
+    | EventsBlock
     | FormBlock
     | IntroBlock
     | StaffBlock
@@ -1329,6 +1330,90 @@ export interface ArchiveBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "EventsBlock".
+ */
+export interface EventsBlock {
+  introContent?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  displayBy?: ('status' | 'selection') | null;
+  eventStatus?: ('upcoming' | 'past') | null;
+  limit?: number | null;
+  selectedEvents?: (string | Event)[] | null;
+  showVenue?: boolean | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'eventsBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "events".
+ */
+export interface Event {
+  id: string;
+  title: string;
+  description?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  image?: (string | null) | Media;
+  isVirtual?: boolean | null;
+  venue?: string | null;
+  isMultiDay?: boolean | null;
+  startDate?: string | null;
+  endDate?: string | null;
+  date?: string | null;
+  sessions?:
+    | {
+        sessionName?: string | null;
+        sessionDate: string;
+        startTime: string;
+        endTime: string;
+        id?: string | null;
+      }[]
+    | null;
+  eventGallery?: (string | Media)[] | null;
+  relatedEvents?: (string | Event)[] | null;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (string | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "FormBlock".
  */
 export interface FormBlock {
@@ -1625,76 +1710,6 @@ export interface SpacerBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'spacer';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "events".
- */
-export interface Event {
-  id: string;
-  title: string;
-  image?: (string | null) | Media;
-  isVirtual?: boolean | null;
-  venue?: string | null;
-  isMultiDay?: boolean | null;
-  startDate?: string | null;
-  endDate?: string | null;
-  date?: string | null;
-  sessions?:
-    | {
-        sessionName?: string | null;
-        sessionDate: string;
-        startTime: string;
-        endTime: string;
-        description?: {
-          root: {
-            type: string;
-            children: {
-              type: string;
-              version: number;
-              [k: string]: unknown;
-            }[];
-            direction: ('ltr' | 'rtl') | null;
-            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-            indent: number;
-            version: number;
-          };
-          [k: string]: unknown;
-        } | null;
-        id?: string | null;
-      }[]
-    | null;
-  description?: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  eventGallery?: (string | Media)[] | null;
-  relatedEvents?: (string | Event)[] | null;
-  meta?: {
-    title?: string | null;
-    /**
-     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
-     */
-    image?: (string | null) | Media;
-    description?: string | null;
-  };
-  publishedAt?: string | null;
-  slug?: string | null;
-  slugLock?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2033,6 +2048,7 @@ export interface PagesSelect<T extends boolean = true> {
         contentImageBlock?: T | ContentImageBlockSelect<T>;
         mediaBlock?: T | MediaBlockSelect<T>;
         archive?: T | ArchiveBlockSelect<T>;
+        eventsBlock?: T | EventsBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
         introBlock?: T | IntroBlockSelect<T>;
         staffBlock?: T | StaffBlockSelect<T>;
@@ -2227,6 +2243,20 @@ export interface ArchiveBlockSelect<T extends boolean = true> {
   categories?: T;
   limit?: T;
   selectedDocs?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "EventsBlock_select".
+ */
+export interface EventsBlockSelect<T extends boolean = true> {
+  introContent?: T;
+  displayBy?: T;
+  eventStatus?: T;
+  limit?: T;
+  selectedEvents?: T;
+  showVenue?: T;
   id?: T;
   blockName?: T;
 }
@@ -2478,6 +2508,7 @@ export interface StaffSelect<T extends boolean = true> {
  */
 export interface EventsSelect<T extends boolean = true> {
   title?: T;
+  description?: T;
   image?: T;
   isVirtual?: T;
   venue?: T;
@@ -2492,10 +2523,8 @@ export interface EventsSelect<T extends boolean = true> {
         sessionDate?: T;
         startTime?: T;
         endTime?: T;
-        description?: T;
         id?: T;
       };
-  description?: T;
   eventGallery?: T;
   relatedEvents?: T;
   meta?:
