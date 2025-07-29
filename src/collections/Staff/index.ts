@@ -40,24 +40,20 @@ export const Staff: CollectionConfig = {
       hasMany: true,
       options: [
         {
+          label: 'Board of Trustees',
+          value: 'trustees',
+        },
+        {
           label: 'Pastoral Staff',
           value: 'pastoral',
         },
         {
-          label: 'Ministry Leaders',
-          value: 'ministry',
+          label: 'Ministers',
+          value: 'ministers',
         },
         {
-          label: 'Leadership',
-          value: 'leadership',
-        },
-        {
-          label: 'Administrative Staff',
-          value: 'administrative',
-        },
-        {
-          label: 'Church Board',
-          value: 'board',
+          label: 'Head of Departments',
+          value: 'departments',
         },
       ],
     },

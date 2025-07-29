@@ -264,7 +264,7 @@ export const seed = async ({
     {
       name: 'Pastor Ola Olaiya',
       position: 'Senior Pastor',
-      staffCategory: ['pastoral', 'leadership'],
+      staffCategory: ['pastoral'],
       bio: 'Pastor Ola grew up in Nigeria and accepted the life of Christ in the year 2000. He has been in the ministry since then. Ola loves to pray and engage in different types of evangelism. His passion is to see Jesus being preached to every man. Ola is a trained Architect and UK/EU Customs Compliance Professional.',
       email: 'ola@gscengland.org',
       phone: '+44 1322632375',
@@ -274,7 +274,7 @@ export const seed = async ({
     {
       name: 'Pastor Grace Olaiya',
       position: 'Associate Pastor',
-      staffCategory: ['pastoral', 'board'],
+      staffCategory: ['pastoral', 'trustees'],
       bio: 'Grace loves to study the word of God and enjoys sharing her passion about the bible! She loves praying and listening to spiritual sermons. Grace is a trained Geographer and an Analytics Consultant by profession.',
       email: 'grace@gscengland.org',
       phone: '+44 1322632375',
@@ -284,7 +284,7 @@ export const seed = async ({
     {
       name: 'Dora Affam',
       position: 'Trustee',
-      staffCategory: ['board'],
+      staffCategory: ['trustees'],
       bio: 'Dora is a dedicated trustee at Gateway Salvation Church.',
       email: 'dora@gscengland.org',
       phone: '+44 1234567890',
@@ -294,7 +294,7 @@ export const seed = async ({
     {
       name: 'Centina Sylvester',
       position: 'Trustee',
-      staffCategory: ['board'],
+      staffCategory: ['trustees'],
       bio: 'Centina serves as a trustee and supports church administration.',
       email: 'centina@gscengland.org',
       phone: '+44 9876543210',
@@ -304,7 +304,7 @@ export const seed = async ({
     {
       name: 'John Doe',
       position: 'Youth Minister',
-      staffCategory: ['ministry'],
+      staffCategory: ['ministers'],
       bio: 'John leads the youth ministry with passion for young people in London.',
       email: 'john@gscengland.org',
       phone: '+44 1122334455',
@@ -314,7 +314,7 @@ export const seed = async ({
     {
       name: 'Jane Smith',
       position: 'Administrative Assistant',
-      staffCategory: ['administrative'],
+      staffCategory: ['departments'],
       bio: 'Jane handles administrative tasks and supports church operations in Kent.',
       email: 'jane@gscengland.org',
       phone: '+44 5566778899',

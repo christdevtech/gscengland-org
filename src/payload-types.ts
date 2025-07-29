@@ -1583,7 +1583,7 @@ export interface StaffBlock {
     [k: string]: unknown;
   } | null;
   displayBy?: ('category' | 'selection' | 'all') | null;
-  staffCategories?: ('leadership' | 'pastoral' | 'ministry' | 'administrative' | 'support')[] | null;
+  staffCategories?: ('trustees' | 'pastoral' | 'ministers' | 'departments')[] | null;
   selectedStaff?: (string | Staff)[] | null;
   layout?: ('grid' | 'list') | null;
   showBio?: boolean | null;
@@ -1601,7 +1601,7 @@ export interface Staff {
   name: string;
   position: string;
   profilePicture?: (string | null) | Media;
-  staffCategory: ('pastoral' | 'ministry' | 'leadership' | 'administrative' | 'board')[];
+  staffCategory: ('trustees' | 'pastoral' | 'ministers' | 'departments')[];
   bio?: string | null;
   email?: string | null;
   phone?: string | null;

@@ -40,42 +40,46 @@ export const StaffGrid: React.FC<StaffGridProps> = (props) => {
   )
 
   const categoryLabels = {
-    leadership: 'Leadership',
+    trustees: 'Board of Trustees',
     pastoral: 'Pastoral Staff',
-    ministry: 'Ministry Leaders',
-    administrative: 'Administrative Staff',
-    board: 'Board of Trustees',
+    ministers: 'Ministers',
+    departments: 'Head of Departments',
   }
+
+  // Define the order of categories
+  const categoryOrder = ['trustees', 'pastoral', 'ministers', 'departments']
 
   return (
     <div className={cn('container', className)}>
-      {Object.entries(groupedStaff).map(([category, categoryStaff]) => (
-        <div key={category} className="mb-12 last:mb-0">
-          <h3 className="text-2xl font-bold mb-8 text-center">
-            {categoryLabels[category as keyof typeof categoryLabels] || category}
-          </h3>
-          <div
-            className={cn(
-              layout === 'grid' ? 'flex flex-wrap items-start justify-center' : 'space-y-6',
-            )}
-          >
-            {categoryStaff.map((staffMember, index) => (
-              <StaffCard
-                key={staffMember.id || index}
-                staff={staffMember}
-                layout={layout}
-                showBio={showBio}
-                showContact={showContact}
-                className={
-                  layout === 'grid'
-                    ? 'basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 py-4 sm:px-4'
-                    : undefined
-                }
-              />
-            ))}
+      {categoryOrder
+        .filter((category) => groupedStaff[category] && groupedStaff[category].length > 0)
+        .map((category) => (
+          <div key={category} className="mb-12 last:mb-0">
+            <h3 className="text-2xl font-bold mb-8 text-center">
+              {categoryLabels[category as keyof typeof categoryLabels] || category}
+            </h3>
+            <div
+              className={cn(
+                layout === 'grid' ? 'flex flex-wrap items-start justify-center' : 'space-y-6',
+              )}
+            >
+              {groupedStaff[category]?.map((staffMember, index) => (
+                <StaffCard
+                  key={staffMember.id || index}
+                  staff={staffMember}
+                  layout={layout}
+                  showBio={showBio}
+                  showContact={showContact}
+                  className={
+                    layout === 'grid'
+                      ? 'basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 py-4 sm:px-4'
+                      : undefined
+                  }
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
     </div>
   )
 }

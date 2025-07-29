@@ -55,24 +55,20 @@ export const StaffBlock: Block = {
       label: 'Staff Categories To Show',
       options: [
         {
-          label: 'Leadership',
-          value: 'leadership',
+          label: 'Board of Trustees',
+          value: 'trustees',
         },
         {
           label: 'Pastoral Staff',
           value: 'pastoral',
         },
         {
-          label: 'Ministry Leaders',
-          value: 'ministry',
+          label: 'Ministers',
+          value: 'ministers',
         },
         {
-          label: 'Administrative Staff',
-          value: 'administrative',
-        },
-        {
-          label: 'Support Staff',
-          value: 'support',
+          label: 'Head of Departments',
+          value: 'departments',
         },
       ],
     },
