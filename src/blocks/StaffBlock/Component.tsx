@@ -32,6 +32,7 @@ export const StaffBlock: React.FC<
       collection: 'staff',
       depth: 1,
       sort: ['staffCategory', 'order', 'name'],
+      limit: 100,
     })
     staff = fetchedStaff.docs
   } else if (displayBy === 'category' && staffCategories?.length) {
@@ -44,6 +45,7 @@ export const StaffBlock: React.FC<
           in: staffCategories,
         },
       },
+      limit: 100,
     })
     staff = fetchedStaff.docs
   } else if (displayBy === 'selection' && selectedStaff?.length) {

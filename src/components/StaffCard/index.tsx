@@ -71,7 +71,7 @@ export const StaffCard: React.FC<StaffCardProps> = (props) => {
     <div className={cn(className)}>
       {profilePicture && (
         <div className="flex justify-center">
-          <div className="w-full aspect-square overflow-hidden ring-2 ring-gray-200 dark:ring-gray-800 relative">
+          <div className="w-full aspect-[5/6] overflow-hidden ring-2 ring-gray-200 dark:ring-gray-800 relative">
             <Media
               fill
               resource={profilePicture}
