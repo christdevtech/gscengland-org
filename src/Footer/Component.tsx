@@ -17,6 +17,7 @@ export async function Footer() {
     footerMotto = 'Gateway Salvation Church - A place where faith, hope, and love come together. Join our community in worship, fellowship, and service.',
     footerMenus,
     socialLinks,
+    registration,
   } = footerData
 
   const headerClass: string = 'text-xl md:text-2xl mb-2 font-semibold'
@@ -55,13 +56,15 @@ export async function Footer() {
           </div>
         </div>
       </div>
-      <div className="w-full bg-black/20 py-4 flex justify-center items center">
-        <div className="container text-center">
-          © {new Date().getFullYear()} Gateway Salvation Church, England. All Rights Reserved.
-          Powered by{' '}
-          <Link href={'https://christdev.com'} className="hover:underline font-semibold">
-            Christdev
-          </Link>
+      <div className="w-full bg-black/20 py-6">
+        <div className="container flex justify-between items-center gap-2 md:gap-6 lg:gap-8 flex-wrap text-sm text-center">
+          {registration && <p>{registration}</p>}
+          <p>
+            Copyright © {new Date().getFullYear()} GSC, England. All Rights Reserved. Powered by{' '}
+            <Link href={'https://christdev.com'} className="hover:underline font-semibold">
+              Christdev
+            </Link>
+          </p>
         </div>
       </div>
     </footer>

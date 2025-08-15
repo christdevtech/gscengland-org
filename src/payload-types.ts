@@ -3230,6 +3230,7 @@ export interface Footer {
     website?: string | null;
     facebook?: string | null;
   };
+  registration?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -3315,6 +3316,7 @@ export interface FooterSelect<T extends boolean = true> {
         website?: T;
         facebook?: T;
       };
+  registration?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

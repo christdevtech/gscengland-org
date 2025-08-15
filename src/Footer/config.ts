@@ -15,22 +15,7 @@ export const Footer: GlobalConfig = {
       defaultValue:
         'Gateway Salvation Church - A place where faith, hope, and love come together. Join our community in worship, fellowship, and service.',
     },
-    // {
-    //   name: 'navItems',
-    //   type: 'array',
-    //   fields: [
-    //     link({
-    //       appearances: false,
-    //     }),
-    //   ],
-    //   maxRows: 6,
-    //   admin: {
-    //     initCollapsed: true,
-    //     components: {
-    //       RowLabel: '@/Footer/RowLabel#RowLabel',
-    //     },
-    //   },
-    // },
+
     {
       name: 'footerMenus',
       type: 'array',
@@ -90,6 +75,12 @@ export const Footer: GlobalConfig = {
           defaultValue: 'https://www.facebook.com/gatewaysalvationchurch',
         },
       ],
+    },
+    {
+      name: 'registration',
+      type: 'text',
+      defaultValue:
+        'Gateway Salvation Church is a charity registered in England & Wales no. 1203676',
     },
   ],
   hooks: {
