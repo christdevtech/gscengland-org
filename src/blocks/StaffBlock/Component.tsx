@@ -14,6 +14,7 @@ export const StaffBlock: React.FC<
 > = async (props) => {
   const {
     id,
+    anchor,
     introContent,
     displayBy,
     staffCategories,
@@ -60,7 +61,7 @@ export const StaffBlock: React.FC<
   }
 
   return (
-    <div className="py-16" id={`block-${id}`}>
+    <div className="py-16" id={anchor || (id ? `block-${id}` : undefined)}>
       {introContent && (
         <div className="container mb-16">
           <RichText className="mx-auto max-w-[48rem]" data={introContent} enableGutter={false} />

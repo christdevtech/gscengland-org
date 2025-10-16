@@ -10,7 +10,7 @@ type Props = {
   className?: string
 } & AccordionBlockType
 
-export const AccordionBlock: React.FC<Props> = ({ className, introContent, accordionItems }) => {
+export const AccordionBlock: React.FC<Props> = ({ className, anchor, introContent, accordionItems }) => {
   const [openItem, setOpenItem] = useState<number | null>(null)
 
   const toggleItem = (index: number) => {
@@ -18,7 +18,7 @@ export const AccordionBlock: React.FC<Props> = ({ className, introContent, accor
   }
 
   return (
-    <div className={cn('w-full py-16', className)}>
+    <div id={anchor || undefined} className={cn('w-full py-16', className)}>
       <div className="container max-w-4xl">
         {/* Intro Content */}
         {introContent && (

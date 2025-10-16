@@ -27,6 +27,7 @@ export type FormBlockType = {
     phone?: string
     email?: string
   }
+  anchor?: string
 }
 
 export const FormBlock: React.FC<
@@ -43,6 +44,7 @@ export const FormBlock: React.FC<
     bgColor,
     isContactPageForm,
     contactInfo,
+    anchor,
   } = props
 
   const formMethods = useForm({
@@ -215,7 +217,7 @@ export const FormBlock: React.FC<
   )
 
   return (
-    <div className={cn(bgColor, 'w-full py-16')}>
+    <div id={anchor || undefined} className={cn(bgColor, 'w-full py-16')}>
       <div className={cn(isContactPageForm ? 'container' : 'lg:max-w-5xl mx-auto')}>
         {enableIntro && introContent && !hasSubmitted && (
           <RichText className="mb-8 lg:mb-12" data={introContent} enableGutter={false} />

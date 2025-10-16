@@ -27,6 +27,7 @@ export const MediaBlock: React.FC<Props> = (props) => {
     media,
     staticImage,
     disableInnerContainer,
+    anchor,
   } = props
 
   let caption
@@ -34,6 +35,7 @@ export const MediaBlock: React.FC<Props> = (props) => {
 
   return (
     <div
+      id={anchor || undefined}
       className={cn(
         '',
         {

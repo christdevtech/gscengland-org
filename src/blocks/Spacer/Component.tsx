@@ -8,12 +8,13 @@ type Props = SpacerBlock & {
 }
 
 export const Spacer: React.FC<Props> = (props) => {
-  const { heightMobile = 16, heightTablet = 32, heightDesktop = 48, className } = props
+  const { heightMobile = 16, heightTablet = 32, heightDesktop = 48, className, anchor } = props
 
   const spacerClass = `spacer-${heightMobile}-${heightTablet}-${heightDesktop}`
 
   return (
     <div
+      id={anchor || undefined}
       className={cn('w-full', spacerClass, className)}
       style={{
         '--height-mobile': `${heightMobile}px`,

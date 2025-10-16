@@ -13,6 +13,15 @@ export const FormBlock: Block = {
   interfaceName: 'FormBlock',
   fields: [
     {
+      name: 'anchor',
+      type: 'text',
+      label: 'Anchor ID',
+      admin: {
+        description:
+          'Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.',
+      },
+    },
+    {
       name: 'form',
       type: 'relationship',
       relationTo: 'forms',

@@ -13,6 +13,7 @@ export const EventsBlock: React.FC<
 > = async (props) => {
   const {
     id,
+    anchor,
     introContent,
     limit: limitFromProps,
     displayBy,
@@ -89,7 +90,7 @@ export const EventsBlock: React.FC<
   }
 
   return (
-    <div className="py-16" id={`block-${id}`}>
+    <div className="py-16" id={anchor || (id ? `block-${id}` : undefined)}>
       {introContent && (
         <div className="container mb-16">
           <RichText className="ms-0 max-w-[48rem]" data={introContent} enableGutter={false} />

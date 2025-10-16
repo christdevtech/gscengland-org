@@ -15,6 +15,15 @@ export const CallToAction: Block = {
   interfaceName: 'CallToActionBlock',
   fields: [
     {
+      name: 'anchor',
+      type: 'text',
+      label: 'Anchor ID',
+      admin: {
+        description:
+          'Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.',
+      },
+    },
+    {
       name: 'richText',
       type: 'richText',
       editor: lexicalEditor({

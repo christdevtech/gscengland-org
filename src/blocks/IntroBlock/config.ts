@@ -5,6 +5,15 @@ export const IntroBlock: Block = {
   interfaceName: 'IntroBlock',
   fields: [
     {
+      name: 'anchor',
+      type: 'text',
+      label: 'Anchor ID',
+      admin: {
+        description:
+          'Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.',
+      },
+    },
+    {
       name: 'subtitle',
       type: 'text',
       label: 'Subtitle',

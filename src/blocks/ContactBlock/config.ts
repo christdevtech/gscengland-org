@@ -9,6 +9,15 @@ export const ContactBlock: Block = {
   },
   fields: [
     {
+      name: 'anchor',
+      type: 'text',
+      label: 'Anchor ID',
+      admin: {
+        description:
+          'Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.',
+      },
+    },
+    {
       name: 'address',
       type: 'textarea',
       label: 'Address',

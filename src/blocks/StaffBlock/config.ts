@@ -13,6 +13,15 @@ export const StaffBlock: Block = {
   interfaceName: 'StaffBlock',
   fields: [
     {
+      name: 'anchor',
+      type: 'text',
+      label: 'Anchor ID',
+      admin: {
+        description:
+          'Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.',
+      },
+    },
+    {
       name: 'introContent',
       type: 'richText',
       editor: lexicalEditor({

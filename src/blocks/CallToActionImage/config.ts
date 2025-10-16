@@ -15,6 +15,15 @@ export const CallToActionImage: Block = {
   interfaceName: 'CallToActionImageBlock',
   fields: [
     {
+      name: 'anchor',
+      type: 'text',
+      label: 'Anchor ID',
+      admin: {
+        description:
+          'Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.',
+      },
+    },
+    {
       name: 'backgroundImage',
       type: 'upload',
       relationTo: 'media',

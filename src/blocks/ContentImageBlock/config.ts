@@ -5,6 +5,15 @@ export const ContentImageBlock: Block = {
   slug: 'contentImageBlock',
   interfaceName: 'ContentImageBlock',
   fields: [
+    {
+      name: 'anchor',
+      type: 'text',
+      label: 'Anchor ID',
+      admin: {
+        description:
+          'Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.',
+      },
+    },
     // Intro Content Section
     {
       name: 'introContent',

@@ -11,7 +11,7 @@ type Props = ContentImageBlockProps & {
 }
 
 export const ContentImageBlock: React.FC<Props> = (props) => {
-  const { introContent, contentRows, className } = props
+  const { introContent, contentRows, className, anchor } = props
 
   // Create responsive aspect ratio classes that Tailwind can recognize
   const getResponsiveAspectRatio = (ratio: string) => {
@@ -34,7 +34,7 @@ export const ContentImageBlock: React.FC<Props> = (props) => {
   }
 
   return (
-    <div className={cn('py-16 lg:py-24', className)}>
+    <div id={anchor || undefined} className={cn('py-16 lg:py-24', className)}>
       <div className={cn('container')}>
         {/* Intro Content Section */}
         {introContent &&

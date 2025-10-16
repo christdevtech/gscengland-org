@@ -5,6 +5,15 @@ export const Code: Block = {
   interfaceName: 'CodeBlock',
   fields: [
     {
+      name: 'anchor',
+      type: 'text',
+      label: 'Anchor ID',
+      admin: {
+        description:
+          'Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.',
+      },
+    },
+    {
       name: 'language',
       type: 'select',
       defaultValue: 'typescript',

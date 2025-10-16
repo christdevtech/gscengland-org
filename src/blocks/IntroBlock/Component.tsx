@@ -26,13 +26,14 @@ export const IntroBlock: React.FC<Props> = ({
   description,
   images,
   aspectRatio = 'aspect-[4/3]',
+  anchor,
 }) => {
   if (!images || images.length === 0) {
     return null
   }
 
   return (
-    <div className={'container mx-auto px-4 py-16'}>
+    <div id={anchor || undefined} className={'container mx-auto px-4 py-16'}>
       {/* Header Section */}
       <div className="text-center mb-12 md:max-w-xl lg:max-w-5xl mx-auto">
         {subtitle && (

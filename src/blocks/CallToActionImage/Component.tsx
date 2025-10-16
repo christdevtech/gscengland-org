@@ -12,11 +12,12 @@ export const CallToActionImageBlock: React.FC<CallToActionImageBlockProps> = ({
   links,
   richText,
   addQuote,
+  anchor,
 }) => {
   const image = typeof backgroundImage === 'object' ? backgroundImage : null
 
   return (
-    <div className="relative py-16 px-4 md:px-8 lg:px-16 md:py-20 lg:py-24 xl:py-32">
+    <div id={anchor || undefined} className="relative py-16 px-4 md:px-8 lg:px-16 md:py-20 lg:py-24 xl:py-32">
       {image && (
         <Media resource={image} fill imgClassName="absolute inset-0 object-cover w-full h-full" />
       )}

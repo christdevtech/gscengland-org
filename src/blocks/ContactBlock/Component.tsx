@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { cn } from '@/utilities/ui'
 
-export const ContactBlock: React.FC<Props> = ({ address, phone, email }) => {
+export const ContactBlock: React.FC<Props> = ({ address, phone, email, anchor }) => {
   const [copied, setCopied] = React.useState<{
     address?: boolean
     phone?: boolean
@@ -28,7 +28,7 @@ export const ContactBlock: React.FC<Props> = ({ address, phone, email }) => {
   if (!address && !phone && !email) return null
 
   return (
-    <section className="container py-12">
+    <section id={anchor || undefined} className="container py-12">
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground">Contact Us</h2>
         <p className="text-muted-foreground mt-2">Reach us through any of the channels below</p>

@@ -725,6 +725,10 @@ export interface Event {
  * via the `definition` "AccordionBlock".
  */
 export interface AccordionBlock {
+  /**
+   * Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.
+   */
+  anchor?: string | null;
   introContent?: {
     subtitle?: string | null;
     title?: string | null;
@@ -774,6 +778,10 @@ export interface AccordionBlock {
  * via the `definition` "CallToActionBlock".
  */
 export interface CallToActionBlock {
+  /**
+   * Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.
+   */
+  anchor?: string | null;
   richText?: {
     root: {
       type: string;
@@ -923,6 +931,10 @@ export interface CallToActionBlock {
  * via the `definition` "CallToActionImageBlock".
  */
 export interface CallToActionImageBlock {
+  /**
+   * Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.
+   */
+  anchor?: string | null;
   backgroundImage: string | Media;
   richText?: {
     root: {
@@ -1074,6 +1086,10 @@ export interface CallToActionImageBlock {
  * via the `definition` "ContentBlock".
  */
 export interface ContentBlock {
+  /**
+   * Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.
+   */
+  anchor?: string | null;
   columns?:
     | {
         size?: ('oneThird' | 'half' | 'twoThirds' | 'full') | null;
@@ -1224,6 +1240,10 @@ export interface ContentBlock {
  * via the `definition` "ContentImageBlock".
  */
 export interface ContentImageBlock {
+  /**
+   * Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.
+   */
+  anchor?: string | null;
   introContent?: {
     subtitle?: string | null;
     title?: string | null;
@@ -1383,6 +1403,10 @@ export interface ContentImageBlock {
  * via the `definition` "MediaBlock".
  */
 export interface MediaBlock {
+  /**
+   * Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.
+   */
+  anchor?: string | null;
   media: string | Media;
   'border-radius'?: ('rounded-none' | 'rounded-lg' | 'rounded-xl' | 'rounded-2xl') | null;
   id?: string | null;
@@ -1394,6 +1418,10 @@ export interface MediaBlock {
  * via the `definition` "ArchiveBlock".
  */
 export interface ArchiveBlock {
+  /**
+   * Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.
+   */
+  anchor?: string | null;
   introContent?: {
     root: {
       type: string;
@@ -1428,6 +1456,10 @@ export interface ArchiveBlock {
  * via the `definition` "EventsBlock".
  */
 export interface EventsBlock {
+  /**
+   * Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.
+   */
+  anchor?: string | null;
   introContent?: {
     root: {
       type: string;
@@ -1457,6 +1489,10 @@ export interface EventsBlock {
  * via the `definition` "FormBlock".
  */
 export interface FormBlock {
+  /**
+   * Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.
+   */
+  anchor?: string | null;
   form: string | Form;
   isContactPageForm?: boolean | null;
   enableIntro?: boolean | null;
@@ -1672,6 +1708,10 @@ export interface Form {
  * via the `definition` "IntroBlock".
  */
 export interface IntroBlock {
+  /**
+   * Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.
+   */
+  anchor?: string | null;
   subtitle?: string | null;
   title: string;
   description?: string | null;
@@ -1692,6 +1732,10 @@ export interface IntroBlock {
  * via the `definition` "StaffBlock".
  */
 export interface StaffBlock {
+  /**
+   * Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.
+   */
+  anchor?: string | null;
   introContent?: {
     root: {
       type: string;
@@ -1744,6 +1788,10 @@ export interface Staff {
  * via the `definition` "ContactBlock".
  */
 export interface ContactBlock {
+  /**
+   * Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.
+   */
+  anchor?: string | null;
   address: string;
   phone: string;
   email: string;
@@ -1756,6 +1804,10 @@ export interface ContactBlock {
  * via the `definition` "SpacerBlock".
  */
 export interface SpacerBlock {
+  /**
+   * Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.
+   */
+  anchor?: string | null;
   heightMobile?: number | null;
   heightTablet?: number | null;
   heightDesktop?: number | null;
@@ -2126,6 +2178,7 @@ export interface PagesSelect<T extends boolean = true> {
  * via the `definition` "AccordionBlock_select".
  */
 export interface AccordionBlockSelect<T extends boolean = true> {
+  anchor?: T;
   introContent?:
     | T
     | {
@@ -2148,6 +2201,7 @@ export interface AccordionBlockSelect<T extends boolean = true> {
  * via the `definition` "CallToActionBlock_select".
  */
 export interface CallToActionBlockSelect<T extends boolean = true> {
+  anchor?: T;
   richText?: T;
   links?:
     | T
@@ -2176,6 +2230,7 @@ export interface CallToActionBlockSelect<T extends boolean = true> {
  * via the `definition` "CallToActionImageBlock_select".
  */
 export interface CallToActionImageBlockSelect<T extends boolean = true> {
+  anchor?: T;
   backgroundImage?: T;
   richText?: T;
   links?:
@@ -2206,6 +2261,7 @@ export interface CallToActionImageBlockSelect<T extends boolean = true> {
  * via the `definition` "ContentBlock_select".
  */
 export interface ContentBlockSelect<T extends boolean = true> {
+  anchor?: T;
   columns?:
     | T
     | {
@@ -2235,6 +2291,7 @@ export interface ContentBlockSelect<T extends boolean = true> {
  * via the `definition` "ContentImageBlock_select".
  */
 export interface ContentImageBlockSelect<T extends boolean = true> {
+  anchor?: T;
   introContent?:
     | T
     | {
@@ -2280,6 +2337,7 @@ export interface ContentImageBlockSelect<T extends boolean = true> {
  * via the `definition` "MediaBlock_select".
  */
 export interface MediaBlockSelect<T extends boolean = true> {
+  anchor?: T;
   media?: T;
   'border-radius'?: T;
   id?: T;
@@ -2290,6 +2348,7 @@ export interface MediaBlockSelect<T extends boolean = true> {
  * via the `definition` "ArchiveBlock_select".
  */
 export interface ArchiveBlockSelect<T extends boolean = true> {
+  anchor?: T;
   introContent?: T;
   populateBy?: T;
   relationTo?: T;
@@ -2304,6 +2363,7 @@ export interface ArchiveBlockSelect<T extends boolean = true> {
  * via the `definition` "EventsBlock_select".
  */
 export interface EventsBlockSelect<T extends boolean = true> {
+  anchor?: T;
   introContent?: T;
   displayBy?: T;
   eventStatus?: T;
@@ -2318,6 +2378,7 @@ export interface EventsBlockSelect<T extends boolean = true> {
  * via the `definition` "FormBlock_select".
  */
 export interface FormBlockSelect<T extends boolean = true> {
+  anchor?: T;
   form?: T;
   isContactPageForm?: T;
   enableIntro?: T;
@@ -2338,6 +2399,7 @@ export interface FormBlockSelect<T extends boolean = true> {
  * via the `definition` "IntroBlock_select".
  */
 export interface IntroBlockSelect<T extends boolean = true> {
+  anchor?: T;
   subtitle?: T;
   title?: T;
   description?: T;
@@ -2356,6 +2418,7 @@ export interface IntroBlockSelect<T extends boolean = true> {
  * via the `definition` "StaffBlock_select".
  */
 export interface StaffBlockSelect<T extends boolean = true> {
+  anchor?: T;
   introContent?: T;
   displayBy?: T;
   staffCategories?: T;
@@ -2371,6 +2434,7 @@ export interface StaffBlockSelect<T extends boolean = true> {
  * via the `definition` "ContactBlock_select".
  */
 export interface ContactBlockSelect<T extends boolean = true> {
+  anchor?: T;
   address?: T;
   phone?: T;
   email?: T;
@@ -2382,6 +2446,7 @@ export interface ContactBlockSelect<T extends boolean = true> {
  * via the `definition` "SpacerBlock_select".
  */
 export interface SpacerBlockSelect<T extends boolean = true> {
+  anchor?: T;
   heightMobile?: T;
   heightTablet?: T;
   heightDesktop?: T;
@@ -3377,6 +3442,10 @@ export interface TaskSchedulePublish {
  * via the `definition` "BannerBlock".
  */
 export interface BannerBlock {
+  /**
+   * Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.
+   */
+  anchor?: string | null;
   style: 'info' | 'warning' | 'error' | 'success';
   content: {
     root: {
@@ -3402,6 +3471,10 @@ export interface BannerBlock {
  * via the `definition` "CodeBlock".
  */
 export interface CodeBlock {
+  /**
+   * Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.
+   */
+  anchor?: string | null;
   language?: ('typescript' | 'javascript' | 'css') | null;
   code: string;
   id?: string | null;
