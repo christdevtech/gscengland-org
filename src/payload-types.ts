@@ -454,6 +454,7 @@ export interface Page {
     | FormBlock
     | IntroBlock
     | StaffBlock
+    | ContactBlock
     | SpacerBlock
   )[];
   meta?: {
@@ -1740,6 +1741,18 @@ export interface Staff {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ContactBlock".
+ */
+export interface ContactBlock {
+  address: string;
+  phone: string;
+  email: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'contactBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "SpacerBlock".
  */
 export interface SpacerBlock {
@@ -2091,6 +2104,7 @@ export interface PagesSelect<T extends boolean = true> {
         formBlock?: T | FormBlockSelect<T>;
         introBlock?: T | IntroBlockSelect<T>;
         staffBlock?: T | StaffBlockSelect<T>;
+        contactBlock?: T | ContactBlockSelect<T>;
         spacer?: T | SpacerBlockSelect<T>;
       };
   meta?:
@@ -2349,6 +2363,17 @@ export interface StaffBlockSelect<T extends boolean = true> {
   layout?: T;
   showBio?: T;
   showContact?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ContactBlock_select".
+ */
+export interface ContactBlockSelect<T extends boolean = true> {
+  address?: T;
+  phone?: T;
+  email?: T;
   id?: T;
   blockName?: T;
 }

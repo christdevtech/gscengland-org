@@ -13,7 +13,7 @@ export const RowLabel: React.FC<RowLabelProps> = () => {
 }
 
 export const ButtonLabel: React.FC<RowLabelProps> = () => {
-  const data = useRowLabel<NonNullable<Header['navItems']>[number]>()
+  const data = useRowLabel<NonNullable<Header['buttons']>[number]>()
 
   const label = data?.data?.link?.label
     ? `Button ${data.rowNumber !== undefined ? data.rowNumber + 1 : ''}: ${data?.data?.link?.label}`

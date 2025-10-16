@@ -14,6 +14,7 @@ import { IntroBlock } from '@/blocks/IntroBlock/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { StaffBlock } from '@/blocks/StaffBlock/Component'
 import { Spacer } from '@/blocks/Spacer/Component'
+import { ContactBlock } from '@/blocks/ContactBlock/Component'
 
 const blockComponents = {
   accordionBlock: AccordionBlock,
@@ -28,6 +29,7 @@ const blockComponents = {
   mediaBlock: MediaBlock,
   staffBlock: StaffBlock,
   spacer: Spacer,
+  contactBlock: ContactBlock,
 }
 
 export const RenderBlocks: React.FC<{

@@ -13,6 +13,7 @@ import { IntroBlock } from '../../blocks/IntroBlock/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { CallToActionImage } from '../../blocks/CallToActionImage/config'
 import { StaffBlock } from '../../blocks/StaffBlock/config'
+import { ContactBlock } from '../../blocks/ContactBlock/config'
 import { hero } from '@/heros/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -94,6 +95,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 FormBlock,
                 IntroBlock,
                 StaffBlock,
+                ContactBlock,
                 SpacerBlock,
               ],
               required: true,
