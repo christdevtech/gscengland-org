@@ -218,7 +218,7 @@ export const FormBlock: React.FC<
 
   return (
     <div id={anchor || undefined} className={cn(bgColor, 'w-full py-16')}>
-      <div className={cn(isContactPageForm ? 'container' : 'lg:max-w-5xl mx-auto')}>
+      <div className={cn(isContactPageForm ? 'container' : 'container lg:max-w-5xl mx-auto')}>
         {enableIntro && introContent && !hasSubmitted && (
           <RichText className="mb-8 lg:mb-12" data={introContent} enableGutter={false} />
         )}
