@@ -218,7 +218,7 @@ export const FormBlock: React.FC<
 
   return (
     <div id={anchor || undefined} className={cn(bgColor, 'w-full py-16')}>
-      <div className={cn(isContactPageForm ? 'container' : 'container lg:max-w-5xl mx-auto')}>
+      <div className={cn('container')}>
         {enableIntro && introContent && !hasSubmitted && (
           <RichText className="mb-8 lg:mb-12" data={introContent} enableGutter={false} />
         )}
@@ -261,7 +261,7 @@ export const FormBlock: React.FC<
                   </div>
 
                   {/* Bot Protection Slider */}
-                  <div className="mb-6 p-4 bg-card border border-border rounded-lg">
+                  <div className="mb-6 p-4 bg-card border border-border rounded-lg px-6">
                     <div className="mb-3">
                       <label className="text-sm font-medium text-foreground">
                         Are you a person? Slide to unlock submit button
@@ -273,7 +273,7 @@ export const FormBlock: React.FC<
                       onTouchMove={handleTouchMove}
                       onTouchEnd={handleTouchEnd}
                     >
-                      <div className="w-full h-12 bg-muted rounded-lg relative overflow-hidden select-none">
+                      <div className="w-full h-8 bg-muted rounded-lg relative overflow-hidden select-none">
                         <div
                           className="h-full bg-gradient-to-r from-primary to-primary/80 rounded-lg transition-all duration-200 ease-out"
                           style={{ width: `${sliderPosition}%` }}
@@ -285,7 +285,7 @@ export const FormBlock: React.FC<
                         </div>
                       </div>
                       <div
-                        className={`absolute top-1/2 -translate-y-1/2 w-10 h-10 bg-background border-2 border-primary rounded-full flex items-center justify-center shadow-lg transition-all duration-200 ease-out cursor-grab ${isDragging ? 'cursor-grabbing scale-110' : ''}`}
+                        className={`absolute top-1/2 -translate-y-1/2 translate-x-2 w-6 h-6 bg-background border-2 border-primary rounded-full flex items-center justify-center shadow-lg transition-all duration-200 ease-out cursor-grab ${isDragging ? 'cursor-grabbing scale-110' : ''}`}
                         style={{ left: `calc(${sliderPosition}% - 20px)` }}
                         onMouseDown={handleMouseDown}
                         onTouchStart={handleTouchStart}
