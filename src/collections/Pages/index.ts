@@ -14,6 +14,7 @@ import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { CallToActionImage } from '../../blocks/CallToActionImage/config'
 import { StaffBlock } from '../../blocks/StaffBlock/config'
 import { ContactBlock } from '../../blocks/ContactBlock/config'
+import { GalleryBlock } from '../../blocks/GalleryBlock/config'
 import { hero } from '@/heros/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -97,6 +98,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 StaffBlock,
                 ContactBlock,
                 SpacerBlock,
+                GalleryBlock,
               ],
               required: true,
               admin: {

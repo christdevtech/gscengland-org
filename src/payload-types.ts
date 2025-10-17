@@ -456,6 +456,7 @@ export interface Page {
     | StaffBlock
     | ContactBlock
     | SpacerBlock
+    | GalleryBlock
   )[];
   meta?: {
     title?: string | null;
@@ -1817,6 +1818,27 @@ export interface SpacerBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "GalleryBlock".
+ */
+export interface GalleryBlock {
+  /**
+   * Optional: Used for in-page anchor navigation. Letters, numbers, hyphens only.
+   */
+  anchor?: string | null;
+  /**
+   * Optional Gallery Title
+   */
+  title?: string | null;
+  /**
+   * Select from existing media or upload new images.
+   */
+  images?: (string | Media)[] | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'galleryBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -2158,6 +2180,7 @@ export interface PagesSelect<T extends boolean = true> {
         staffBlock?: T | StaffBlockSelect<T>;
         contactBlock?: T | ContactBlockSelect<T>;
         spacer?: T | SpacerBlockSelect<T>;
+        galleryBlock?: T | GalleryBlockSelect<T>;
       };
   meta?:
     | T
@@ -2450,6 +2473,17 @@ export interface SpacerBlockSelect<T extends boolean = true> {
   heightMobile?: T;
   heightTablet?: T;
   heightDesktop?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "GalleryBlock_select".
+ */
+export interface GalleryBlockSelect<T extends boolean = true> {
+  anchor?: T;
+  title?: T;
+  images?: T;
   id?: T;
   blockName?: T;
 }

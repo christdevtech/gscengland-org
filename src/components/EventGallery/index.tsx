@@ -3,6 +3,7 @@ import React, { useState, useCallback } from 'react'
 import { Media } from '@/components/Media'
 import type { Media as MediaType } from '@/payload-types'
 import { cn } from '@/utilities/ui'
+import { AnimatePresence, motion } from 'framer-motion'
 
 interface EventGalleryProps {
   images: (string | MediaType)[]
@@ -119,15 +120,24 @@ const Lightbox: React.FC<LightboxProps> = ({
 
       {/* Image Container */}
       <div className="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center">
-        {currentImage && typeof currentImage !== 'string' && (
-          <div className="relative">
-            <Media
-              resource={currentImage}
-              imgClassName="max-w-full max-h-[90vh] object-contain"
-              size="90vw"
-            />
-          </div>
-        )}
+        <AnimatePresence mode="wait" initial={false}>
+          {currentImage && typeof currentImage !== 'string' && (
+            <motion.div
+              key={(currentImage as any).id ?? currentIndex}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.98, left: '50%' }}
+              transition={{ type: 'spring', stiffness: 360, damping: 38 }}
+              className="relative"
+            >
+              <Media
+                resource={currentImage}
+                imgClassName="max-w-full max-h-[90vh] object-contain"
+                size="90vw"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Image Counter */}
@@ -145,14 +155,19 @@ const Lightbox: React.FC<LightboxProps> = ({
               key={index}
               onClick={() => onGoToImage(index)}
               className={cn(
-                'flex-shrink-0 w-16 h-16 rounded overflow-hidden border-2 transition-all',
+                'flex-shrink-0 w-16 h-16 rounded overflow-hidden border-2 transition-all relative',
                 index === currentIndex
                   ? 'border-white'
                   : 'border-transparent opacity-60 hover:opacity-80',
               )}
             >
               {typeof image !== 'string' && (
-                <Media resource={image} imgClassName="w-full h-full object-cover" size="64px" />
+                <Media
+                  resource={image}
+                  fill
+                  imgClassName="w-full h-full object-cover"
+                  size="64px"
+                />
               )}
             </button>
           ))}
@@ -205,11 +220,12 @@ export const EventGallery: React.FC<EventGalleryProps> = ({ images, className })
           return (
             <div
               key={image.id || index}
-              className="cursor-pointer group relative overflow-hidden rounded-lg"
+              className="cursor-pointer group relative overflow-hidden aspect-video md:aspect-[3/2] lg:aspect-video rounded-lg"
               onClick={() => openLightbox(index)}
             >
               <Media
                 resource={image}
+                fill
                 imgClassName="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
                 size="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
               />
