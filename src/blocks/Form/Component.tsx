@@ -273,13 +273,13 @@ export const FormBlock: React.FC<
                       onTouchMove={handleTouchMove}
                       onTouchEnd={handleTouchEnd}
                     >
-                      <div className="w-full h-8 bg-muted rounded-lg relative overflow-hidden select-none">
+                      <div className="w-full h-8 bg-muted rounded-full border-2 relative overflow-hidden select-none border-primary">
                         <div
                           className="h-full bg-gradient-to-r from-primary to-primary/80 rounded-lg transition-all duration-200 ease-out"
                           style={{ width: `${sliderPosition}%` }}
                         />
                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                          <span className="text-sm font-medium text-muted-foreground">
+                          <span className="text-sm font-medium text-green-500">
                             {isSliderComplete ? '✓ Verified' : 'Drag to verify →'}
                           </span>
                         </div>
