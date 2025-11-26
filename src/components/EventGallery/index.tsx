@@ -133,6 +133,7 @@ const Lightbox: React.FC<LightboxProps> = ({
               <Media
                 resource={currentImage}
                 imgClassName="max-w-full max-h-[90vh] object-contain"
+                videoClassName="max-w-full max-h-[90vh] object-contain"
                 size="90vw"
               />
             </motion.div>
@@ -227,6 +228,7 @@ export const EventGallery: React.FC<EventGalleryProps> = ({ images, className })
                 resource={image}
                 fill
                 imgClassName="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                videoClassName="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
                 size="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
               />
 

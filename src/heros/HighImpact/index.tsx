@@ -14,12 +14,7 @@ import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 
-export const HighImpactHero: React.FC<Page['hero']> = ({
-  links,
-  media,
-  richText,
-  highImpactFields,
-}) => {
+export const HighImpactHero: React.FC<Page['hero']> = ({ highImpactFields }) => {
   const { setHeaderTheme } = useHeaderTheme()
 
   const prevRef = useRef<HTMLButtonElement>(null)
