@@ -79,12 +79,14 @@ export default buildConfig({
     // Nodemailer transportOptions
     transportOptions: {
       host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT,
+      port: process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : undefined,
+      secure: process.env.SMTP_SECURE === 'true',
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASSWORD,
       },
     },
+    skipVerify: true,
   }),
   collections: [Pages, Posts, Media, Categories, Users, Staff, Events],
   cors: [getServerSideURL()].filter(Boolean),
