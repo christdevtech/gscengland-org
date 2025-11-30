@@ -18,6 +18,7 @@ import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 import { Events } from './collections/Events'
+import { Subscribers } from './collections/Subscribers'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -88,7 +89,7 @@ export default buildConfig({
     },
     skipVerify: true,
   }),
-  collections: [Pages, Posts, Media, Categories, Users, Staff, Events],
+  collections: [Pages, Posts, Media, Categories, Users, Staff, Events, Subscribers],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer],
   plugins: [

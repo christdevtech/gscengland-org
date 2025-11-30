@@ -1,60 +1,37 @@
+
 'use client'
 
 import React, { useState } from 'react'
+import { subscribe } from '@/actions/subscribe'
 
 export const SubscribersForm = ({ headerClass }: { headerClass: string }) => {
   const [email, setEmail] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [message, setMessage] = useState('')
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-
-    if (!email) {
+  const formAction = async (formData: FormData) => {
+    const value = (formData.get('email') as string) || ''
+    if (!value) {
       setMessage('Please enter your email address')
       return
     }
-
     setIsSubmitting(true)
     setMessage('')
-
-    try {
-      // Dummy API call - replace with actual endpoint
-      await submitEmail(email)
-      setMessage('Thank you for subscribing!')
-      setEmail('')
-    } catch (error) {
-      setMessage('Something went wrong. Please try again.')
-      console.error('Error:', error)
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
-  // Dummy API function
-  const submitEmail = async (email: string): Promise<void> => {
-    // Simulate API call delay
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        // Simulate random success/failure for demo
-        if (Math.random() > 0.1) {
-          console.log('Email submitted:', email)
-          resolve()
-        } else {
-          reject(new Error('API Error'))
-        }
-      }, 1000)
-    })
+    const res = await subscribe(value)
+    setMessage(res.message)
+    if (res.ok) setEmail('')
+    setIsSubmitting(false)
   }
 
   return (
     <div className="w-full max-w-sm">
       <h2 className={headerClass}>Stay up to date</h2>
 
-      <form onSubmit={handleSubmit} className="relative">
+      <form action={formAction} className="relative">
         <div className="relative">
           <input
             type="email"
+            name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Your email address"
