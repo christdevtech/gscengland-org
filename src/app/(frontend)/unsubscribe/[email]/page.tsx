@@ -3,10 +3,11 @@
 import React, { useState } from 'react'
 import { unsubscribe } from '@/actions/subscribe'
 
-export default function Page({ params }: { params: { email: string } }) {
+export default async function Page({ params }: { params: Promise<{ email: string }> }) {
   const [message, setMessage] = useState('')
   const [pending, setPending] = useState(false)
-  const email = decodeURIComponent(params.email)
+  const paramsObj = await params
+  const email = decodeURIComponent(paramsObj.email)
 
   const formAction = async () => {
     setPending(true)
@@ -33,4 +34,3 @@ export default function Page({ params }: { params: { email: string } }) {
     </div>
   )
 }
-
