@@ -29,7 +29,7 @@ export const updateSubscribersForEvent: CollectionAfterChangeHook<Event> = async
   if (!isPublishedNow || wasPublishedBefore) return doc
 
   const baseUrl = getBaseUrl()
-  const logoUrl = `${baseUrl}/logowhite.png`
+  const logoUrl = `${baseUrl}/logo-white.png`
   let fresh: Event | undefined
   try {
     fresh = (await req.payload.findByID({

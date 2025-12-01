@@ -31,7 +31,7 @@ export const updateSubscribersForPost: CollectionAfterChangeHook<Post> = async (
   req.payload.logger.info('Updating subscribers for post')
 
   const baseUrl = getBaseUrl()
-  const logoUrl = `${baseUrl}/logowhite.png`
+  const logoUrl = `${baseUrl}/logo-white.png`
   let fresh: Post | undefined
   try {
     fresh = (await req.payload.findByID({

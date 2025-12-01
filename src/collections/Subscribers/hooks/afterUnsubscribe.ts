@@ -4,7 +4,7 @@ import type { CollectionAfterDeleteHook } from 'payload'
 export const afterUnsubscribe: CollectionAfterDeleteHook<Subscriber> = async ({ doc, req }) => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || ''
   const subscribeUrl = `${baseUrl}/subscribe/${encodeURIComponent(doc.email)}`
-  const logoUrl = `${baseUrl}/logowhite.png`
+  const logoUrl = `${baseUrl}/logo-white.png`
 
   const html = `
   <div style="background:#f7fafc;padding:24px;font-family:Arial,Helvetica,sans-serif;color:#1a202c">

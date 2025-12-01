@@ -10,7 +10,7 @@ export const afterSubscribe: CollectionAfterChangeHook<Subscriber> = async ({
 
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || 'https://gscengland.org'
   const unsubscribeUrl = `${baseUrl}/unsubscribe/${encodeURIComponent(doc.email)}`
-  const logoUrl = `${baseUrl}/logowhite.png`
+  const logoUrl = `${baseUrl}/logo-white.png`
 
   const html = `
   <div style="background:#f7fafc;padding:24px;font-family:Arial,Helvetica,sans-serif;color:#1a202c">
