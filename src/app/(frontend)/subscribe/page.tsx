@@ -9,11 +9,10 @@ export default async function Page({
   searchParams?: Promise<{ email?: string; done?: string }>
 }) {
   const resolved = await searchParams
-  const defaultEmail = resolved?.email ? decodeURIComponent(resolved.email) : ''
+  const email = resolved?.email ? decodeURIComponent(resolved.email) : ''
 
-  async function performSubscribe(formData: FormData) {
+  async function performSubscribe() {
     'use server'
-    const email = (formData.get('email') as string) || ''
     if (!email) {
       redirect('/subscribe?done=0')
     }
@@ -25,5 +24,5 @@ export default async function Page({
 
   const done = resolved?.done === '1'
 
-  return <SubscribeClient defaultEmail={defaultEmail} done={done} action={performSubscribe} />
+  return <SubscribeClient email={email} done={done} action={performSubscribe} />
 }

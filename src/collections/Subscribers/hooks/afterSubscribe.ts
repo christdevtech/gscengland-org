@@ -10,11 +10,16 @@ export const afterSubscribe: CollectionAfterChangeHook<Subscriber> = async ({
 
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || 'https://gscengland.org'
   const unsubscribeUrl = `${baseUrl}/unsubscribe/${encodeURIComponent(doc.email)}`
+  const logoUrl = `${baseUrl}/logowhite.png`
 
   const html = `
   <div style="background:#f7fafc;padding:24px;font-family:Arial,Helvetica,sans-serif;color:#1a202c">
     <div style="max-width:600px;margin:0 auto;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08)">
       <div style="background:#1e3a8a;color:#ffffff;padding:24px 28px">
+       <div style="display:flex;align-items:center;gap:14px;margin-bottom:30px">
+          <img src="${logoUrl}" alt="GSC England" style="width:100px;height:auto;display:block" />
+          <strong style="font-size:18px;line-height:1.4">Gateway Salvation Church</strong>
+        </div>
         <h1 style="margin:0;font-size:22px;line-height:1.4">Welcome to GSC England Updates</h1>
         <p style="margin:8px 0 0;font-size:14px;opacity:0.9">You are now subscribed to our mailing list.</p>
       </div>
