@@ -2,6 +2,8 @@ import type { CollectionConfig } from 'payload'
 
 import { anyone } from '../../access/anyone'
 import { authenticated } from '../../access/authenticated'
+import { afterSubscribe } from './hooks/afterSubscribe'
+import { afterUnsubscribe } from './hooks/afterUnsubscribe'
 
 export const Subscribers: CollectionConfig = {
   slug: 'subscribers',
@@ -24,4 +26,8 @@ export const Subscribers: CollectionConfig = {
     },
   ],
   timestamps: true,
+  hooks: {
+    afterChange: [afterSubscribe],
+    afterDelete: [afterUnsubscribe],
+  },
 }
