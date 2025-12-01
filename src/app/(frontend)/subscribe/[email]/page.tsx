@@ -14,12 +14,9 @@ export default async function Page({
   const resolvedSearch = await searchParams
   const email = decodeURIComponent(resolved.email)
 
-  async function performSubscribe(formData: FormData) {
+  async function performSubscribe() {
     'use server'
-    const value = (formData.get('email') as string) || email
-    if (!value) {
-      redirect(`/subscribe/${encodeURIComponent(email)}?done=0`)
-    }
+    const value = email
     const res = await subscribe(value)
     const flag = res.ok ? '1' : '0'
     redirect(`/subscribe/${encodeURIComponent(value)}?done=${flag}`)
@@ -27,5 +24,5 @@ export default async function Page({
 
   const done = resolvedSearch?.done === '1'
 
-  return <SubscribeClient defaultEmail={email} done={done} action={performSubscribe} />
+  return <SubscribeClient email={email} done={done} action={performSubscribe} />
 }
