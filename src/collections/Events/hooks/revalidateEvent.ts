@@ -17,6 +17,19 @@ export const revalidateEvent: CollectionAfterChangeHook<Event> = ({
 
       revalidatePath(path)
       revalidateTag('events-sitemap')
+      revalidatePath('/events')
+      ;(async () => {
+        const res = await payload.find({
+          collection: 'events',
+          limit: 12,
+          pagination: true,
+          where: { _status: { equals: 'published' } },
+          // select: { id: true },
+        })
+        for (let i = 1; i <= (res.totalPages || 1); i++) {
+          revalidatePath(`/events/page/${i}`)
+        }
+      })()
     }
 
     // If the event was previously published, we need to revalidate the old path
@@ -27,6 +40,19 @@ export const revalidateEvent: CollectionAfterChangeHook<Event> = ({
 
       revalidatePath(oldPath)
       revalidateTag('events-sitemap')
+      revalidatePath('/events')
+      ;(async () => {
+        const res = await payload.find({
+          collection: 'events',
+          limit: 12,
+          pagination: true,
+          where: { _status: { equals: 'published' } },
+          // select: { id: true },
+        })
+        for (let i = 1; i <= (res.totalPages || 1); i++) {
+          revalidatePath(`/events/page/${i}`)
+        }
+      })()
     }
   }
   return doc

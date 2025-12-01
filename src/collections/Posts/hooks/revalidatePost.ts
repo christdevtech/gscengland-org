@@ -17,6 +17,18 @@ export const revalidatePost: CollectionAfterChangeHook<Post> = ({
 
       revalidatePath(path)
       revalidateTag('posts-sitemap')
+      revalidatePath('/posts')
+      ;(async () => {
+        const res = await payload.find({
+          collection: 'posts',
+          limit: 12,
+          pagination: true,
+          // select: { id: true },
+        })
+        for (let i = 1; i <= (res.totalPages || 1); i++) {
+          revalidatePath(`/posts/page/${i}`)
+        }
+      })()
     }
 
     // If the post was previously published, we need to revalidate the old path
@@ -27,6 +39,18 @@ export const revalidatePost: CollectionAfterChangeHook<Post> = ({
 
       revalidatePath(oldPath)
       revalidateTag('posts-sitemap')
+      revalidatePath('/posts')
+      ;(async () => {
+        const res = await payload.find({
+          collection: 'posts',
+          limit: 12,
+          pagination: true,
+          // select: { id: true },
+        })
+        for (let i = 1; i <= (res.totalPages || 1); i++) {
+          revalidatePath(`/posts/page/${i}`)
+        }
+      })()
     }
   }
   return doc
