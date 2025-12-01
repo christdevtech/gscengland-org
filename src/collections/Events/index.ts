@@ -16,6 +16,7 @@ import { Code } from '../../blocks/Code/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { revalidateDelete, revalidateEvent } from './hooks/revalidateEvent'
+import { updateSubscribersForEvent } from './hooks/updateSubscribers'
 import {
   MetaDescriptionField,
   MetaImageField,
@@ -285,7 +286,7 @@ export const Events: CollectionConfig = {
     ...slugField('title'),
   ],
   hooks: {
-    afterChange: [revalidateEvent],
+    afterChange: [revalidateEvent, updateSubscribersForEvent],
     afterDelete: [revalidateDelete],
   },
   versions: {
