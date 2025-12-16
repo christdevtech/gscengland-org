@@ -459,6 +459,7 @@ export interface Page {
     | ContactBlock
     | SpacerBlock
     | GalleryBlock
+    | ServiceBlock
   )[];
   meta?: {
     title?: string | null;
@@ -1841,6 +1842,41 @@ export interface GalleryBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ServiceBlock".
+ */
+export interface ServiceBlock {
+  title: string;
+  items?:
+    | {
+        title: string;
+        subtitle?: string | null;
+        icon?:
+          | (
+              | 'Calendar'
+              | 'Clock'
+              | 'MapPin'
+              | 'Video'
+              | 'Sun'
+              | 'Moon'
+              | 'Heart'
+              | 'Megaphone'
+              | 'Users'
+              | 'Star'
+              | 'Home'
+            )
+          | null;
+        time?: string | null;
+        location?: string | null;
+        frequency?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'serviceBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "subscribers".
  */
 export interface Subscriber {
@@ -2197,6 +2233,7 @@ export interface PagesSelect<T extends boolean = true> {
         contactBlock?: T | ContactBlockSelect<T>;
         spacer?: T | SpacerBlockSelect<T>;
         galleryBlock?: T | GalleryBlockSelect<T>;
+        serviceBlock?: T | ServiceBlockSelect<T>;
       };
   meta?:
     | T
@@ -2500,6 +2537,26 @@ export interface GalleryBlockSelect<T extends boolean = true> {
   anchor?: T;
   title?: T;
   images?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ServiceBlock_select".
+ */
+export interface ServiceBlockSelect<T extends boolean = true> {
+  title?: T;
+  items?:
+    | T
+    | {
+        title?: T;
+        subtitle?: T;
+        icon?: T;
+        time?: T;
+        location?: T;
+        frequency?: T;
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }

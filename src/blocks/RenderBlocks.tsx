@@ -16,6 +16,7 @@ import { StaffBlock } from '@/blocks/StaffBlock/Component'
 import { Spacer } from '@/blocks/Spacer/Component'
 import { ContactBlock } from '@/blocks/ContactBlock/Component'
 import { GalleryBlock } from '@/blocks/GalleryBlock/Component'
+import { ServiceBlock } from './ServiceBlock/Component'
 
 const blockComponents = {
   accordionBlock: AccordionBlock,
@@ -32,6 +33,7 @@ const blockComponents = {
   spacer: Spacer,
   contactBlock: ContactBlock,
   galleryBlock: GalleryBlock,
+  serviceBlock: ServiceBlock,
 }
 
 export const RenderBlocks: React.FC<{

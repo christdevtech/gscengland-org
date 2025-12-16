@@ -29,6 +29,7 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 import { SpacerBlock } from '@/blocks/Spacer/config'
+import { ServiceBlock } from '../../blocks/ServiceBlock/config'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
@@ -99,6 +100,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 ContactBlock,
                 SpacerBlock,
                 GalleryBlock,
+                ServiceBlock,
               ],
               required: true,
               admin: {
