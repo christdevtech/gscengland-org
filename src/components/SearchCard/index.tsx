@@ -4,17 +4,17 @@ import useClickableCard from '@/utilities/useClickableCard'
 import Link from 'next/link'
 import React, { Fragment } from 'react'
 
-import type { Post, Event } from '@/payload-types'
+import type { Media as MediaType } from '@/payload-types'
 
 import { Media } from '@/components/Media'
 
 export type SearchCardData = {
   slug: string
-  categories?: any[]
+  categories?: { title?: string }[]
   meta?: {
     title?: string
     description?: string
-    image?: any
+    image?: MediaType | string | null
   }
   title: string
   contentType: 'posts' | 'events'

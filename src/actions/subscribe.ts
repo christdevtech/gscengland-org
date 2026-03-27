@@ -35,7 +35,7 @@ export async function unsubscribe(email: string): Promise<{ ok: boolean; message
     }
 
     return { ok: true, message: 'You are already unsubscribed.' }
-  } catch (e) {
+  } catch (_e) {
     return { ok: false, message: 'Something went wrong. Please try again.' }
   }
 }

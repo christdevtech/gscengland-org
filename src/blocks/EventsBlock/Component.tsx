@@ -1,4 +1,4 @@
-import type { Event, EventsBlock as EventsBlockProps } from '@/payload-types'
+import type { EventsBlock as EventsBlockProps } from '@/payload-types'
 
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'

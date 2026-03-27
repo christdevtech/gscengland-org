@@ -323,7 +323,7 @@ export const seed = async ({
     },
   ]
 
-  const staffDocs = await Promise.all(
+  const _staffDocs = await Promise.all(
     staffData.map((data) => payload.create({ collection: 'staff', data })),
   )
 
@@ -609,7 +609,7 @@ export const seed = async ({
     },
   ]
 
-  const eventDocs = await Promise.all(
+  const _eventDocs = await Promise.all(
     eventsData.map((data) => payload.create({ collection: 'events', data })),
   )
 

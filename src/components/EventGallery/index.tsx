@@ -123,7 +123,7 @@ const Lightbox: React.FC<LightboxProps> = ({
         <AnimatePresence mode="wait" initial={false}>
           {currentImage && typeof currentImage !== 'string' && (
             <motion.div
-              key={(currentImage as any).id ?? currentIndex}
+              key={(currentImage as MediaType).id ?? currentIndex}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98, left: '50%' }}

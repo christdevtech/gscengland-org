@@ -9,13 +9,16 @@ export interface CalendarEventData {
   url?: string
 }
 
+type LexicalNode = { type: string; text?: string; children?: LexicalNode[] }
+type LexicalContent = { root?: { children?: LexicalNode[] } } | null | undefined
+
 /**
  * Converts Lexical editor content to plain text
  */
-function lexicalToPlainText(lexicalContent: any): string {
+function lexicalToPlainText(lexicalContent: LexicalContent): string {
   if (!lexicalContent?.root?.children) return ''
   
-  const extractText = (children: any[]): string => {
+  const extractText = (children: LexicalNode[]): string => {
     return children
       .map((child) => {
         if (child.type === 'text') {

@@ -40,9 +40,9 @@ export const HighImpactHero: React.FC<Page['hero']> = ({ highImpactFields }) => 
           nextEl: nextRef.current,
         }}
         onInit={(swiper) => {
-          // @ts-ignore
+          // @ts-expect-error
           swiper.params.navigation.prevEl = prevRef.current
-          // @ts-ignore
+          // @ts-expect-error
           swiper.params.navigation.nextEl = nextRef.current
           swiper.navigation.init()
           swiper.navigation.update()

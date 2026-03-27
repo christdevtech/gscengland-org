@@ -1,12 +1,18 @@
 import type { CollectionAfterChangeHook } from 'payload'
-import type { Event, Subscriber } from '@/payload-types'
+import type { Event } from '@/payload-types'
 
 function getBaseUrl() {
   return process.env.NEXT_PUBLIC_SERVER_URL || 'https://gscengland.org'
 }
 
+type MediaObject = {
+  url?: string | null
+  filename?: string | null
+  sizes?: { og?: { url?: string | null }; large?: { url?: string | null } }
+}
+
 function getImageUrl(event: Event): string | undefined {
-  const media = (event.meta?.image as any) || event.image
+  const media = (event.meta?.image as MediaObject | null | undefined) || (event.image as MediaObject | null | undefined)
   if (media && typeof media === 'object') {
     return (
       media.sizes?.og?.url ||
@@ -20,7 +26,7 @@ function getImageUrl(event: Event): string | undefined {
 
 export const updateSubscribersForEvent: CollectionAfterChangeHook<Event> = async ({
   doc,
-  operation,
+  operation: _operation,
   req,
   previousDoc,
 }) => {
@@ -48,7 +54,7 @@ export const updateSubscribersForEvent: CollectionAfterChangeHook<Event> = async
         date: true,
       },
     })) as unknown as Event
-  } catch (e) {
+  } catch (_e) {
     fresh = doc as unknown as Event
   }
   const eventUrl = `${baseUrl}/events/${encodeURIComponent(fresh?.slug || doc.slug || doc.id || '')}`
@@ -97,8 +103,8 @@ export const updateSubscribersForEvent: CollectionAfterChangeHook<Event> = async
 
     try {
       await req.payload.sendEmail({ to: s.email, subject, html })
-    } catch (e) {
-      req.payload.logger.error({ err: e, msg: 'Failed to send event update email' })
+    } catch (_e) {
+      req.payload.logger.error({ err: _e, msg: 'Failed to send event update email' })
     }
   }
 

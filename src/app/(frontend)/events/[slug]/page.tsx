@@ -17,7 +17,7 @@ import { EventGallery } from '@/components/EventGallery'
 import { RelatedEvents } from '@/components/RelatedEvents'
 import { formatHumanDate, formatTimeRange } from '@/utilities/formatDateTime'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Calendar, Clock, MapPin } from 'lucide-react'
+import { Calendar, Clock } from 'lucide-react'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })

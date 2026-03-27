@@ -3,7 +3,7 @@ import { Field } from 'payload'
 
 type buttonClassesType = (options?: {
   overrides?: Record<string, unknown>
-  condition?: (_: any, siblingData: any) => boolean
+  condition?: (_: unknown, siblingData: unknown) => boolean
 }) => Field
 
 export const buttonClasses: buttonClassesType = ({

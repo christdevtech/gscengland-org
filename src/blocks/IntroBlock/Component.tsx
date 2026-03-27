@@ -1,18 +1,8 @@
 'use client'
 
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, EffectCoverflow, Navigation, Pagination } from 'swiper/modules'
-import Image from 'next/image'
-
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/effect-coverflow'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
 
 import type { IntroBlock as IntroBlockProps } from '@/payload-types'
-import { getMediaUrl } from '@/utilities/getMediaUrl'
 import { Media } from '@/components/Media'
 import { cn } from '@/utilities/ui'
 

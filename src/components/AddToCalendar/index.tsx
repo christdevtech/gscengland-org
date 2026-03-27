@@ -7,7 +7,6 @@ import {
   eventToCalendarData,
   calendarProviders,
   downloadICSFile,
-  type CalendarEventData,
 } from '@/utilities/calendarUtils'
 
 interface AddToCalendarProps {

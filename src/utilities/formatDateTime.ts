@@ -40,7 +40,7 @@ export const formatHumanDate = (
     if (isNaN(date.getTime())) return 'Invalid Date'
     
     return date.toLocaleDateString('en-US', options)
-  } catch (error) {
+  } catch (_error) {
     return 'Invalid Date'
   }
 }
@@ -94,7 +94,7 @@ export const formatTime = (timeString: string): string => {
     const displayMinutes = minutes.toString().padStart(2, '0')
     
     return `${displayHours}:${displayMinutes} ${period}`
-  } catch (error) {
+  } catch (_error) {
     return timeString // Return original if parsing fails
   }
 }
@@ -133,7 +133,7 @@ export const formatFullDateTime = (timestamp: string): string => {
     })
     
     return `${dateStr} at ${timeStr}`
-  } catch (error) {
+  } catch (_error) {
     return 'Invalid Date'
   }
 }

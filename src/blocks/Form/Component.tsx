@@ -40,7 +40,6 @@ export const FormBlock: React.FC<
     form: formFromProps,
     form: { id: formID, confirmationMessage, confirmationType, redirect, submitButtonLabel } = {},
     introContent,
-    hideLabels,
     bgColor,
     isContactPageForm,
     contactInfo,
