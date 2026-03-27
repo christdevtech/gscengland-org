@@ -8,12 +8,12 @@ WORKDIR /app
 # Declare build-time arguments passed via --build-arg in Cloud Build
 ARG NEXT_PUBLIC_SERVER_URL
 ARG PAYLOAD_SECRET
-ARG DATABASE_URL
+ARG DATABASE_URI
 
 # Make them available as environment variables during `next build`
 ENV NEXT_PUBLIC_SERVER_URL=$NEXT_PUBLIC_SERVER_URL
 ENV PAYLOAD_SECRET=$PAYLOAD_SECRET
-ENV DATABASE_URL=$DATABASE_URL
+ENV DATABASE_URI=$DATABASE_URI
 
 COPY . .
 
