@@ -4,6 +4,17 @@ FROM node:22.13.0-slim AS base
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
+
+# Declare build-time arguments passed via --build-arg in Cloud Build
+ARG NEXT_PUBLIC_SERVER_URL
+ARG PAYLOAD_SECRET
+ARG DATABASE_URL
+
+# Make them available as environment variables during `next build`
+ENV NEXT_PUBLIC_SERVER_URL=$NEXT_PUBLIC_SERVER_URL
+ENV PAYLOAD_SECRET=$PAYLOAD_SECRET
+ENV DATABASE_URL=$DATABASE_URL
+
 COPY . .
 
 RUN npm install -g pnpm
