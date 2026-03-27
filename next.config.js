@@ -10,7 +10,12 @@ const NEXT_PUBLIC_SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL
 const nextConfig = {
   images: {
     remotePatterns: [
-      ...[NEXT_PUBLIC_SERVER_URL, 'https://gscengland.org', 'http://localhost:3000'].map((item) => {
+      ...[
+        NEXT_PUBLIC_SERVER_URL,
+        'https://gscengland.org',
+        'https://www.gscengland.org',
+        'http://localhost:3000',
+      ].map((item) => {
         const url = new URL(item)
 
         return {
