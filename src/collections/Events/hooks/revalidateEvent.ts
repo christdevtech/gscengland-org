@@ -3,6 +3,7 @@ import type { CollectionAfterChangeHook, CollectionAfterDeleteHook } from 'paylo
 import { revalidatePath, revalidateTag } from 'next/cache'
 
 import type { Event } from '@/payload-types'
+import { revalidateSite } from '@/hooks/revalidateSite'
 
 export const revalidateEvent: CollectionAfterChangeHook<Event> = ({
   doc,
@@ -18,6 +19,7 @@ export const revalidateEvent: CollectionAfterChangeHook<Event> = ({
       revalidatePath(path)
       revalidateTag('events-sitemap')
       revalidatePath('/events')
+      revalidateSite()
       ;(async () => {
         const res = await payload.find({
           collection: 'events',
@@ -41,6 +43,7 @@ export const revalidateEvent: CollectionAfterChangeHook<Event> = ({
       revalidatePath(oldPath)
       revalidateTag('events-sitemap')
       revalidatePath('/events')
+      revalidateSite()
       ;(async () => {
         const res = await payload.find({
           collection: 'events',
@@ -64,6 +67,7 @@ export const revalidateDelete: CollectionAfterDeleteHook<Event> = ({ doc, req: {
 
     revalidatePath(path)
     revalidateTag('events-sitemap')
+    revalidateSite()
   }
 
   return doc

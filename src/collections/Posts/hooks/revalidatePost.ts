@@ -3,6 +3,7 @@ import type { CollectionAfterChangeHook, CollectionAfterDeleteHook } from 'paylo
 import { revalidatePath, revalidateTag } from 'next/cache'
 
 import type { Post } from '../../../payload-types'
+import { revalidateSite } from '@/hooks/revalidateSite'
 
 export const revalidatePost: CollectionAfterChangeHook<Post> = ({
   doc,
@@ -18,6 +19,7 @@ export const revalidatePost: CollectionAfterChangeHook<Post> = ({
       revalidatePath(path)
       revalidateTag('posts-sitemap')
       revalidatePath('/posts')
+      revalidateSite()
       ;(async () => {
         const res = await payload.find({
           collection: 'posts',
@@ -40,6 +42,7 @@ export const revalidatePost: CollectionAfterChangeHook<Post> = ({
       revalidatePath(oldPath)
       revalidateTag('posts-sitemap')
       revalidatePath('/posts')
+      revalidateSite()
       ;(async () => {
         const res = await payload.find({
           collection: 'posts',
@@ -62,6 +65,7 @@ export const revalidateDelete: CollectionAfterDeleteHook<Post> = ({ doc, req: { 
 
     revalidatePath(path)
     revalidateTag('posts-sitemap')
+    revalidateSite()
   }
 
   return doc
